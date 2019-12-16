@@ -1,0 +1,132 @@
+/* DOCUMENT INFORMATION
+    - Document: 		VRise Main Stylesheet
+    - Version:  		0.1
+    - Client:   		HSHL
+    - Author:   		Marc-A. Drolshagen  
+*/
+
+/* COLORS
+    - primary color:	#colorcode1
+    - secondary color:	#colorcode2
+*/
+
+/* FONTS
+    - font1:			font1 name
+    - font2:			font2 name
+*/
+
+/* CSS DIRECTORY
+    1. =GLOBAL SETTINGS
+    2. =SECTION1
+    3. =SECTION2
+    4. =SECTION3
+*/
+
+/* ===============
+GLOBAL SETTINGS 
+=============== */
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===============
+NAVIGATION
+=============== */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*padding and border won't add to width and height anymore*/
+}
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+body {
+   background-color: #161834;
+}
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    height: 115px;
+    
+}
+
+nav {
+    
+    height: 115px;
+    width: 100%;
+    background-color: white;
+    top: 0;
+    left: 280px;
+    position: fixed;
+    z-index: 0;
+    float: left;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 115px;
+    width: 100%;
+    
+   
+}
+
+nav li {
+    font-size: 20px;
+    list-style: none;
+    padding-left: 91px;
+    padding-right: 91px;
+}
+
+nav li a {
+    color: #161834;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    cursor: pointer;
+    color: #ff8400;
+}
+
+#logoHomeButton {
+    position: fixed;
+    z-index: 1;
+    top: -15px;
+    left: -15px;
+    width: 416px;
+    height: 248px;
+    
+}            
+
+
+/* ===============
+SECTION2
+=============== */
+            
+
+
+/* ===============
+SECTION3
+=============== */
+
+
+
+
+
+/* 
+    The life of a Designer is a life of fight:
+    Fight against the ugliness
+    - Massimo Vignelli
+*/
