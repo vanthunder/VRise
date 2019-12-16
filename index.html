@@ -1,10 +1,119 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
-<meta charset="utf-8">
-<title>Support</title>
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VRise</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; /*padding and border won't add to width and height anymore*/
+        }
 
+        html {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 20px;
+        }
+
+        body {
+           background-color: #161834;
+        }
+
+        #navbar {
+            position: fixed;
+            width: 100%;
+        }
+        
+        nav {
+            
+            height: 115px;
+            width: 100%;
+            background-color: white;
+            top: 0;
+            left: 418px;
+            position: fixed;
+            z-index: 0;
+        }
+
+        nav ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            height: 115px;
+            width: 70%;
+            
+           
+        }
+
+        nav li {
+            font-size: 20px;
+            list-style: none;
+            padding-left: 91px;
+            padding-right: 91px;
+        }
+
+        nav li a {
+            color: #161834;
+            text-decoration: none;
+        }
+
+        nav li a:hover {
+            cursor: pointer;
+            color: #ff8400;
+        }
+
+        #logoHomeButton {
+            position: fixed;
+            left: 0;
+            width: 416px;
+            height: 200px;
+            
+        }
+
+        /*
+        #logoBgTriangle {
+            width: 418px;
+            height: 200px;
+            background-color: white;
+            z-index: 1;
+            position: fixed;
+            width: 0;
+            height: 0;
+            border-left: 209px solid transparent;
+            border-right: 209px solid transparent;
+            border-top: 200px solid white;
+        }
+        
+        #logo {
+            width: auto; 
+            height: 100px;
+            left: 140px;
+            top: 30px;
+            position: fixed;
+            z-index: 2;
+        }
+        */
+
+
+    </style>
+</head>
 <body>
+    <div id="navbar">
+        
+        <img id="logoHomeButton" src="img/Logo_Home_Button.svg" alt="Logo">
+        <nav>
+            <ul>
+                <li><a href="#">Produkte</a></li>
+                <li><a href="#">Zubehör</a></li>
+                <li><a href="#">News</a></li>
+            </ul>
+        </nav>
+    </div>
 </body>
 </html>
