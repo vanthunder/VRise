@@ -100,6 +100,16 @@ nav li a:hover {
     color: #ff8400;
 }
 
+nav li::after {
+    content: '';
+    background-color: #161834;
+    width: 95px;
+    height: 3px;
+    position: fixed;
+    left: 370px;
+    top: 70px;
+}
+
 #logoHomeButton {
     position: fixed;
     z-index: 1;
