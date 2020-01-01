@@ -25,6 +25,7 @@
 /* ===============
 GLOBAL SETTINGS 
 =============== */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 *, *::before, *::after {
     margin: 0;
@@ -32,106 +33,121 @@ GLOBAL SETTINGS
     box-sizing: border-box;
 }
 
-/* ===============
-NAVIGATION
-=============== */
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
-*, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /*padding and border won't add to width and height anymore*/
-}
-
 html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 17px;
 }
 
-body {
-   background-color: #161834;
-}
+/* ===============
+NAVIGATION
+=============== */
 
-#navbar {
-    position: fixed;
-    width: 100%;
-    height: 115px;
+.navWrapper {
+    /*  background-color: white; */
+     grid-area: nav;
+     z-index: 1;
+     /* position: fixed; */
+ }
+
+ nav {
+     /* background-color: white; */
+     width: 100%;
+     height: 75px;
+     z-index: 0;
+     position: fixed;
+     
+     
+ }
+
+ nav ul {
+     width: 100%;
+     height: 75px;
+     display: grid;
+     grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+     grid-column-gap: 0.7vw;
+     grid-template-areas: 
+         "logo logo logo . produkte . zubehör . news . . . . ."
+ }
+
+ nav li {
+     list-style: none;
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     height: 75px;
+ }
+
+ nav a {
+     text-decoration: none;
+     color: #161834;
+ }
+
+ nav a:hover {
+     color: #ff8400;
+ }
+
+ .produkte {
+     grid-area: produkte;
+ }
+
+ .zubehör {
+     grid-area: zubehör;
+ }
+
+ .news {
+     grid-area: news;
+ }
+
+ .logoHomeButton {
+     z-index: 1;
+     grid-area: logo;
+     align-items: flex-start;
+     transform-origin: top;
+     
+ }
+
+ .logoImage {
+     width: 100%;
+ }
+
+ .background {
+     grid-column-start: 2;
+     grid-column-end: 15;
+     grid-row-start: 1;
+     grid-row-end: 2;
+     background-color: white;
+     z-index: -1;
+ }
+
+ @media (max-width: 754px){
+ 
+
+ }
+
+/* ===============
+MAIN
+=============== */
+main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+    grid-column-gap: 0.7vw;
+}
     
-}
-
-nav {
-    
-    height: 115px;
-    width: 100%;
-    background-color: white;
-    top: 0;
-    left: 280px;
-    position: fixed;
-    z-index: 0;
-    float: left;
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    height: 115px;
-    width: 100%;
-    
-   
-}
-
-nav li {
-    font-size: 20px;
-    list-style: none;
-    padding-left: 91px;
-    padding-right: 91px;
-}
-
-nav li a {
-    color: #161834;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    cursor: pointer;
-    color: #ff8400;
-}
-
-nav li::after {
-    content: '';
-    background-color: #161834;
-    width: 95px;
-    height: 3px;
-    position: fixed;
-    left: 370px;
-    top: 70px;
-}
-
-#logoHomeButton {
-    position: fixed;
-    z-index: 1;
-    top: -15px;
-    left: -15px;
-    width: 416px;
-    height: 248px;
-    
-}            
 
 
 /* ===============
-SECTION2
-=============== */
-            
-
-
-/* ===============
-SECTION3
+FOOTER
 =============== */
 
-
+footer {
+    background-color: #25214F;
+    grid-area: footer;
+    display: grid;
+    grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+    grid-column-gap: 0.7vw;
+}
 
 
 

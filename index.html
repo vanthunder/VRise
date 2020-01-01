@@ -1,23 +1,57 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VRise</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+            display: grid;
+            /* grid-template-columns: 7% repeat(12, 1fr) 7%; /* Spaltenbreite */ 
+            grid-template-rows: 75px calc(100vh - 75px) calc(150vh - 200px) 200px;  /* Zeilenhöhe */
+            /*grid-column-gap: 0.7%;*/
+            background-color: #161834;
+            grid-template-areas: 
+                "nav"
+                "header"
+                "main"
+                "footer"
+        }
+
+        header {
+            background-color: pink;
+            grid-area: header;
+            grid-row-start: 1;
+            grid-row-end: 3;
+            z-index: 0;
+        }
+        
+        #headerImageStartseite {
+            width: 100%;
+            height: calc(100vh-75px);
+        }
+        
+    </style>
 </head>
 <body>
-    <div id="navbar">
-        
-        <a href="#"><img id="logoHomeButton" src="img/Logo_Home_Button.png" alt="Logo"></a>
+    <div class="navWrapper">
         <nav>
             <ul>
-                <li><a href="#">Produkte</a></li>
-                <li><a href="#">Zubehör</a></li>
-                <li><a href="#">News</a></li>
+                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li class="produkte">
+                <li class="produkte"><a href="#">Produkte</a></li class="produkte">
+                <li class="zubehör"><a href="#">Zubehör</a></li>
+                <li class="news"><a href="#">News</a></li>
+                <li class="background"><div></div></li>
             </ul>
         </nav>
     </div>
+    <header>
+        <img id="headerImageStartseite" src="img/großes Bild Startseite.jpg" alt="">
+    </header> <!-- insert big picture here -->
+    <main></main>
+    <footer></footer>
 </body>
 </html>
