@@ -147,6 +147,20 @@ footer {
     display: grid;
     grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
     grid-column-gap: 0.7vw;
+    grid-template-areas: 
+    ". . . . . . . . . . footerLinks footerLinks footerLinks ."
+
+}
+
+.footerLinks {
+    grid-area: footerLinks;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50% 50%;
+    grid-column-gap: 0.7vw;
+    grid-template-areas: 
+    ". . ."
+    ". . ."
 }
 
 
