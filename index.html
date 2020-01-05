@@ -36,15 +36,45 @@
         }
         
     </style>
+    <script>
+        var aufgeklappt = false;
+
+        function sandwichClick() {
+               
+                var menüpunkte = document.getElementsByClassName("menüpunkt");
+               
+               if (aufgeklappt == false) {
+                    for(var i =0; i<3; i++){
+                        menüpunkte[i].setAttribute("style", "display: block");
+                    }
+                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 5; height: 225px;");
+                    aufgeklappt = true;
+               }
+               else {
+                    for(var i =0; i<3; i++){
+                        menüpunkte[i].setAttribute("style", "display: none");
+                    }
+                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 2; height: 75px;");
+                    aufgeklappt = false;
+               }
+                
+                
+        }
+                
+            
+            
+        
+    </script>
 </head>
 <body>
     <div class="navWrapper">
         <nav>
             <ul>
                 <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li class="produkte">
-                <li class="produkte"><a href="#">Produkte</a></li class="produkte">
-                <li class="zubehör"><a href="#">Zubehör</a></li>
-                <li class="news"><a href="#">News</a></li>
+                <li class="produkte menüpunkt"><a href="#">Produkte</a></li class="produkte">
+                <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
+                <li class="news menüpunkt"><a href="#">News</a></li>
+                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li>
                 <li class="background"><div></div></li>
             </ul>
         </nav>
