@@ -37,12 +37,17 @@
         
     </style>
     <script>
-        var aufgeklappt = false;
+        function resize() {
+            if(screen.width > 754 && aufgeklappt == true){
+                
+                sandwichClick();
+            }
+        }
 
+        var aufgeklappt = false;
+        var menüpunkte = document.getElementsByClassName("menüpunkt");
         function sandwichClick() {
-               
-                var menüpunkte = document.getElementsByClassName("menüpunkt");
-               
+
                if (aufgeklappt == false) {
                     for(var i =0; i<3; i++){
                         menüpunkte[i].setAttribute("style", "display: block");
@@ -66,7 +71,7 @@
         
     </script>
 </head>
-<body>
+<body onresize="resize()">
     <div class="navWrapper">
         <nav>
             <ul>
