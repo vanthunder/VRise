@@ -15,12 +15,14 @@
         body {
             display: grid;
             grid-template-rows: 75px calc(100vh - 75px) calc(150vh - 200px) 200px;
+            grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+            grid-column-gap: 0.7vw;
             background-color: #161834;
             grid-template-areas: 
-                "navigation"
-                "header"
-                "main"
-                "footer"
+                "navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation navigation"
+                "header header . . . . . . . . . . . ."
+                ". . . main . . . . . . . . . ."
+                ". . . . . . . . . . . . . footer"
         }
 
         nav {
