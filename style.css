@@ -191,10 +191,9 @@ NAVIGATION
 MAIN
 =============== */
 main {
-    grid-area: main;
-    display: grid;
-    grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
-    grid-column-gap: 0.7vw;
+	
+
+	
 }
     
 

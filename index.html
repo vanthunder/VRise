@@ -10,7 +10,7 @@
 
         body {
             display: grid;
-            /* grid-template-columns: 7% repeat(12, 1fr) 7%; /* Spaltenbreite */ 
+             /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
             grid-template-rows: 75px calc(100vh - 75px) calc(150vh - 200px) 200px;  /* Zeilenhöhe */
             /*grid-column-gap: 0.7%;*/
             background-color: #161834;
@@ -22,12 +22,26 @@
         }
 
         header {
-            background-color: pink;
+            background-color: #161834;
             grid-area: header;
             grid-row-start: 1;
             grid-row-end: 3;
             z-index: 0;
         }
+		
+		main{
+			grid-area: main;
+    		display: grid;
+			grid-template-rows: 315px repeat(6,1fr) 315px;
+			grid-template-columns: 161.5 repeat(6,1fr)161.5
+			grid-column-gap: 0.7%;
+			background-color: #161834;
+            grid-area: main;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            z-index: 0;
+		}
+	
         
         
         #headerImageStartseite {
@@ -84,14 +98,94 @@
             </ul>
         </nav>
     </div>
-    <header>
-        <img id="headerImageStartseite" src="img/großes Bild Startseite.jpg" alt="">
+<header>
+  <img id="headerImageStartseite" src="img/großes Bild Startseite.jpg" alt="">
     </header> <!-- insert big picture here -->
-    <main></main>
-    <footer>
+<main>
+
+  
+	  <img src="img/maingame.png"  id="maingamepic"/>
+  	<div id="article1"><header>DAS VR-Sportspiel</header>
+	  Unser Produkt bietet ein einzigartiges, virtuelles Sporterlebnis, in dem Sie spielend fit werden!
+		<br><button>  Zum Produkt  </button></br>
+	</div>
+		<img src="img/ballgame.png" id="balldlcpic"/>
+  	<div id="article2"><header>Ballsport DLC</header>
+	Jetzt erhältlich!
+	Der Ballsport DLC bringt Ihnen das Gefühl mitten im Fußballspiel zu sein direkt in Ihr Wohnzimmer!
+		<br><button>  Zum DLC  </button></br>
+	</div>
+	<img src="img/trackingball.png" id="trackingballpic"/>
+	  	<div id="article3"><header>jetzt auch Kompatibel mit Tracking Balls</header>
+	Sind sie stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für Sie. Mit den neuen Tracking Balls, verwandeln Sie jeden Alltagsgegenstand in ein Sportgerät!
+			<br><button>  Zum Zubehör  </button></br>
+	</div>
+		
+  <style>
+	  button{
+		  border-radius: 25px;
+		  padding: 5px 12px;
+		  text-align: center;
+		  margin-top: 1%;
+		  margin-left: 30%;
+	  }
+	  header{
+		  font-size: 20pt;
+	  }
+		#maingamepic{
+			grid-row: 1;
+			grid-column: 1;
+	  }
+	  #article1{
+		  margin-top: 20%;
+		  margin-left: 20%;
+		 color: white;
+		 grid-row: 1;
+		 grid-column: 2;
+		 width: 450px;
+		 font-size: 14pt;
+		   
+	  }
+	  	  #article2{
+		 color: white;
+		 margin-top: 40%;
+		margin-left: 15%
+		 grid-row: 2;
+		 grid-column: 2;
+		 width: 450px;
+		 font-size: 14pt;
+		   
+	  }
+	  #balldlcpic{
+		margin-top: 10%;
+		grid-row: 2;
+		grid-column: 3; 
+	  }
+	  #trackingballpic{
+		margin-top: 10%;
+		grid-row: 3;
+		grid-column: 1; 
+	  }
+	  	  #article3{
+		 margin-top: 40%;
+		margin-left: -10%;
+		 color: white;
+		 grid-row: 3;
+		 grid-column: 2;
+		 width: 450px;
+		 font-size: 14pt;
+	  }
+
+	</style>
+  <script>
+	</script>
+		
+</main>
+	
+<footer>
+  <h1>Links</h1>
         <!-- Aufzählung der Footer Links -->
         <div class="footerHeadlineLinks">
-            <h1>Links</h1>
         </div>
         <div class="supportLink">
             <a href="#">Support</a>
@@ -128,6 +222,6 @@
         <div class="instagramLink">
             <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" /></a>
         </div>
-    </footer>
+</footer>
 </body>
 </html>
