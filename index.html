@@ -10,8 +10,9 @@
 
         body {
             display: grid;
+            width: 100%;
              /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
-            grid-template-rows: 75px calc(100vh - 75px) calc(150vh - 200px) 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px calc(100vh - 75px) 1600px 200px;  /* Zeilenhöhe */
             /*grid-column-gap: 0.7%;*/
             background-color: #161834;
             grid-template-areas: 
@@ -22,7 +23,9 @@
         }
 
         header {
-            background-color: #161834;
+            background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
+            background-size: cover;
+            
             grid-area: header;
             grid-row-start: 1;
             grid-row-end: 3;
@@ -31,24 +34,90 @@
 		
 		main{
 			grid-area: main;
-    		display: grid;
-			grid-template-rows: 315px repeat(6,1fr) 315px;
-			grid-template-columns: 161.5 repeat(6,1fr)161.5;
-			grid-column-gap: 0.7%;
-			background-color: #161834;
-            grid-area: main;
-            grid-row-start: 3;
-            grid-row-end: 4;
-            z-index: 0;
-		}
-	
-        
-        
-        #headerImageStartseite {
+            display: grid;
             width: 100%;
-            height: calc(100vh); /* verzerrt?! */
+			grid-template-rows: repeat(4, 1fr);
+			grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+            grid-template-rows: 75px;
+            grid-column-gap: 0.7vw;
+            background-color: #161834;
         }
         
+        #maingamepic {
+            grid-template-areas: maingamepic;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            width: 100%;
+            height: auto;
+        }
+
+        #balldlcpic {
+            grid-template-areas: balldlcpic;
+            grid-column-start: 10;
+            grid-column-end: 15;
+            grid-row-start: 3;
+            grid-row-end: 5;
+            width: 95%;
+            height: auto;
+        }
+
+        #trackingballpic {
+            grid-template-areas: trackingballpic;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            width: 100%;
+            height: auto;
+        }
+
+        #article1 {
+            grid-template-areas: article1;
+            grid-column-start: 8;
+            grid-column-end: 11;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            align-self: center;
+        }
+
+        #article2 {
+            grid-template-areas: article2;
+            grid-column-start: 6;
+            grid-column-end: 9;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            align-self: center;
+        }
+
+        #article3 {
+            grid-template-areas: article3;
+            grid-column-start: 7;
+            grid-column-end: 11;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            align-self: center;
+        }
+
+       /*  #article4 {
+            grid-template-areas: article3;
+            grid-column-start: 7;
+            grid-column-end: 11;
+            grid-row-start: 5;
+            grid-row-end: 6;
+            align-self: center;
+        } */
+        
+        
+        
+        
+       /*  #headerImageStartseite {
+            width: 100%;
+            height: calc(100vh); /* verzerrt?! */
+        } */
+
+       
     </style>
     <script>
         function resize() {
@@ -99,87 +168,36 @@
         </nav>
     </div>
 <header>
-  <img id="headerImageStartseite" src="img/großes Bild Startseite.jpg" alt="">
-    </header> <!-- insert big picture here -->
+</header> 
+
 <main>
 
   
 	  <img src="img/maingame.png"  id="maingamepic"/>
-  	<div id="article1"><header>DAS VR-Sportspiel</header>
-	  Unser Produkt bietet ein einzigartiges, virtuelles Sporterlebnis, in dem Sie spielend fit werden!
-		<br><button>  Zum Produkt  </button></br>
-	</div>
-		<img src="img/ballgame.png" id="balldlcpic"/>
-  	<div id="article2"><header>Ballsport DLC</header>
-	Jetzt erhältlich!
-	Der Ballsport DLC bringt Ihnen das Gefühl mitten im Fußballspiel zu sein direkt in Ihr Wohnzimmer!
+  	<div id="article1"><h1>DAS VR-Sportspiel</h1>
+	    <p> Produkt bietet ein einzigartiges, virtuelles Sporterlebnis, in dem Sie spielend fit werden! </p> 
+	    <br><button>  Zum Produkt  </button></br>
+    </div>
+    
+	<img src="img/ballgame.png" id="balldlcpic"/>
+  	<div id="article2"><h1>Ballsport DLC</h1>
+	    <p> 
+            Jetzt erhältlich!
+            Der Ballsport DLC bringt Ihnen das Gefühl mitten im Fußballspiel zu sein direkt in Ihr Wohnzimmer!
+        </p>
 		<br><button>  Zum DLC  </button></br>
-	</div>
+    </div>
+    
 	<img src="img/trackingball.png" id="trackingballpic"/>
-	  	<div id="article3"><header>jetzt auch Kompatibel mit Tracking Balls</header>
-	Sind sie stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für Sie. Mit den neuen Tracking Balls, verwandeln Sie jeden Alltagsgegenstand in ein Sportgerät!
-			<br><button>  Zum Zubehör  </button></br>
-	</div>
-		
-  <style>
-	  button{
-		  border-radius: 25px;
-		  padding: 5px 12px;
-		  text-align: center;
-		  margin-top: 1%;
-		  margin-left: 30%;
-	  }
-	  header{
-		  font-size: 20pt;
-	  }
-		#maingamepic{
-			grid-row: 1;
-			grid-column: 1;
-	  }
-	  #article1{
-		  margin-top: 20%;
-		  margin-left: 20%;
-		 color: white;
-		 grid-row: 1;
-		 grid-column: 2;
-		 width: 450px;
-		 font-size: 14pt;
-		   
-	  }
-	  	  #article2{
-		 color: white;
-		 margin-top: 40%;
-		margin-left: 15%;
-		 grid-row: 2;
-		 grid-column: 2;
-		 width: 450px;
-		 font-size: 14pt;
-		   
-	  }
-	  #balldlcpic{
-		margin-top: 10%;
-		grid-row: 2;
-		grid-column: 3; 
-	  }
-	  #trackingballpic{
-		margin-top: 10%;
-		grid-row: 3;
-		grid-column: 1; 
-	  }
-	  	  #article3{
-		 margin-top: 40%;
-		margin-left: -10%;
-		 color: white;
-		 grid-row: 3;
-		 grid-column: 2;
-		 width: 450px;
-		 font-size: 14pt;
-	  }
-
-	</style>
-  <script>
-	</script>
-		
+	<div id="article3"><h1>jetzt auch Kompatibel mit Tracking Balls</h1>
+        <p>
+            Sind sie stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für Sie. 
+            Mit den neuen Tracking Balls, verwandeln Sie jeden Alltagsgegenstand in ein Sportgerät!
+        </p>
+		<br><button>  Zum Zubehör  </button></br>
+    </div>
+    
+  
 </main>
 	
 <footer>
