@@ -221,13 +221,13 @@ footer {
     background-color: #25214F;
     grid-area: footer;
     display: grid;
-    grid-template-columns: 7vw repeat(14, 1fr) 7vw;
+    grid-template-columns: 7vw repeat(12, 1fr) 7vw;
     grid-column-gap: 0.7vw;
     grid-template-areas: 
-        ". . . . . . . . . . . . . ." 
-        ". . socialMediaHeadline socialMediaHeadline  . . .newsLetterHeadline  . . . footerHeadlineLinks . ."
-        ". . . . . . . . . . . . . ." 
-        ". . youtubeLink twitterLink instagramLink . . newsLetterTextArea submitButtonClass  . . supportLink aboutUsLink impressumLink" 
+        ". . . . . . . . . . . ." 
+        "socialMediaHeadLine socialMediaHeadline  . . .newsLetterHeadline  . . . footerHeadlineLinks . ."
+        ". . . . . . . . . . . ." 
+        ". youtubeLink twitterLink instagramLink  . newsLetterTextArea submitButtonClass  . . supportLink aboutUsLink impressumLink" 
         
 }
 
