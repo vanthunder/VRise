@@ -10,53 +10,193 @@
 
         body {
             display: grid;
-            /* grid-template-columns: 7% repeat(12, 1fr) 7%; /* Spaltenbreite */ 
-            grid-template-rows: 75px calc(100vh - 75px) calc(150vh - 200px) 200px;  /* Zeilenhöhe */
+            width: 100%;
+             /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
+            grid-template-rows: 75px calc(100vh - 75px) 1600px 200px;  /* Zeilenhöhe */
             /*grid-column-gap: 0.7%;*/
             background-color: #161834;
             grid-template-areas: 
                 "nav"
                 "header"
                 "main"
-                "footer"
+                "footer";
         }
 
         header {
-            background-color: pink;
+            background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
+            background-size: cover;
+            
             grid-area: header;
             grid-row-start: 1;
             grid-row-end: 3;
             z-index: 0;
         }
-        
-        
-        #headerImageStartseite {
+		
+		main{
+			grid-area: main;
+            display: grid;
             width: 100%;
-            height: calc(100vh); /* verzerrt?! */
+			grid-template-rows: repeat(4, 1fr);
+			grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+            grid-template-rows: 75px;
+            grid-column-gap: 0.7vw;
+            background-color: #161834;
         }
         
+        #maingamepic {
+            grid-template-areas: maingamepic;
+            grid-column-start: 1;
+            grid-column-end: 7;
+            grid-row-start: 2;
+            grid-row-end: 4;
+            width: 100%;
+            height: auto;
+        }
+
+        #balldlcpic {
+            grid-template-areas: balldlcpic;
+            grid-column-start: 10;
+            grid-column-end: 15;
+            grid-row-start: 3;
+            grid-row-end: 5;
+            width: 95%;
+            height: auto;
+        }
+
+        #trackingballpic {
+            grid-template-areas: trackingballpic;
+            grid-column-start: 1;
+            grid-column-end: 6;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            width: 100%;
+            height: auto;
+        }
+
+        #article1 {
+            grid-template-areas: article1;
+            grid-column-start: 8;
+            grid-column-end: 11;
+            grid-row-start: 2;
+            grid-row-end: 3;
+            align-self: center;
+        }
+
+        #article2 {
+            grid-template-areas: article2;
+            grid-column-start: 6;
+            grid-column-end: 9;
+            grid-row-start: 3;
+            grid-row-end: 4;
+            align-self: center;
+        }
+
+        #article3 {
+            grid-template-areas: article3;
+            grid-column-start: 7;
+            grid-column-end: 11;
+            grid-row-start: 4;
+            grid-row-end: 5;
+            align-self: center;
+        }
+
+       /*  #article4 {
+            grid-template-areas: article3;
+            grid-column-start: 7;
+            grid-column-end: 11;
+            grid-row-start: 5;
+            grid-row-end: 6;
+            align-self: center;
+        } */
+        
+
+       
     </style>
+    <script>
+        function resize() {
+            if(screen.width > 754 && aufgeklappt == true){
+                
+                sandwichClick();
+            }
+        }
+
+        var aufgeklappt = false;
+        var menüpunkte = document.getElementsByClassName("menüpunkt");
+        function sandwichClick() {
+
+               if (aufgeklappt == false) {
+                    for(var i =0; i<3; i++){
+                        menüpunkte[i].setAttribute("style", "display: block");
+                    }
+                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 5; height: 225px;");
+                    aufgeklappt = true;
+               }
+               else {
+                    for(var i =0; i<3; i++){
+                        menüpunkte[i].setAttribute("style", "display: ;");
+                    }
+                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 2; height: 75px;");
+                    aufgeklappt = false;
+               }
+                
+                
+        }
+                
+            
+            
+        
+    </script>
 </head>
-<body>
+<body onresize="resize()">
     <div class="navWrapper">
         <nav>
             <ul>
                 <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li class="produkte">
-                <li class="produkte"><a href="#">Produkte</a></li class="produkte">
-                <li class="zubehör"><a href="#">Zubehör</a></li>
-                <li class="news"><a href="#">News</a></li>
+                <li class="produkte menüpunkt"><a href="#">Produkte</a></li class="produkte">
+                <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
+                <li class="news menüpunkt"><a href="#">News</a></li>
+                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li>
                 <li class="background"><div></div></li>
             </ul>
         </nav>
     </div>
-    <header>
-        <img id="headerImageStartseite" src="img/großes Bild Startseite.jpg" alt="">
-    </header> <!-- insert big picture here -->
-    <main></main>
-    <footer>
+<header>
+</header> 
+
+<main>
+
+  
+	  <img src="img/maingame.png"  id="maingamepic"/>
+  	<div id="article1"><h1>DAS VR-Sportspiel</h1>
+	    <p> Produkt bietet ein einzigartiges, virtuelles Sporterlebnis, in dem Sie spielend fit werden! </p> 
+	    <br><button>  Zum Produkt  </button></br>
+    </div>
+    
+	<img src="img/ballgame.png" id="balldlcpic"/>
+  	<div id="article2"><h1>Ballsport DLC</h1>
+	    <p> 
+            Jetzt erhältlich!
+            Der Ballsport DLC bringt Ihnen das Gefühl mitten im Fußballspiel zu sein direkt in Ihr Wohnzimmer!
+        </p>
+		<br><button>  Zum DLC  </button></br>
+    </div>
+    
+	<img src="img/trackingball.png" id="trackingballpic"/>
+	<div id="article3"><h1>jetzt auch Kompatibel mit Tracking Balls</h1>
+        <p>
+            Sind sie stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für Sie. 
+            Mit den neuen Tracking Balls, verwandeln Sie jeden Alltagsgegenstand in ein Sportgerät!
+        </p>
+		<br><button>  Zum Zubehör  </button></br>
+    </div>
+    
+  
+</main>
+	
+<footer>
+  <h1>Links</h1>
         <!-- Aufzählung der Footer Links -->
         <div class="footerHeadlineLinks">
-            <h1>Links</h1>
         </div>
         <div class="supportLink">
             <a href="#">Support</a>
@@ -93,6 +233,6 @@
         <div class="instagramLink">
             <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" /></a>
         </div>
-    </footer>
+</footer>
 </body>
 </html>
