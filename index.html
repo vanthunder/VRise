@@ -31,8 +31,10 @@
             grid-row-end: 3;
             z-index: 0;
         }
-		
-		main{
+        
+        /*DestopView*/
+		@media (min-width: 755px){
+            main{
 			grid-area: main;
             display: grid;
             width: 100%;
@@ -44,7 +46,7 @@
         }
         
         #maingamepic {
-            grid-template-areas: maingamepic;
+            grid-area: maingamepic;
             grid-column-start: 1;
             grid-column-end: 7;
             grid-row-start: 2;
@@ -54,7 +56,7 @@
         }
 
         #balldlcpic {
-            grid-template-areas: balldlcpic;
+            grid-area: balldlcpic;
             grid-column-start: 10;
             grid-column-end: 15;
             grid-row-start: 3;
@@ -64,7 +66,7 @@
         }
 
         #trackingballpic {
-            grid-template-areas: trackingballpic;
+            grid-area: trackingballpic;
             grid-column-start: 1;
             grid-column-end: 6;
             grid-row-start: 4;
@@ -74,17 +76,17 @@
         }
 
         #article1 {
-            grid-template-areas: article1;
+            grid-area: article1;
             grid-column-start: 8;
-            grid-column-end: 11;
+            grid-column-end: 12;
             grid-row-start: 2;
             grid-row-end: 3;
             align-self: center;
         }
 
         #article2 {
-            grid-template-areas: article2;
-            grid-column-start: 6;
+            grid-area: article2;
+            grid-column-start: 5;
             grid-column-end: 9;
             grid-row-start: 3;
             grid-row-end: 4;
@@ -92,12 +94,13 @@
         }
 
         #article3 {
-            grid-template-areas: article3;
+            grid-area: article3;
             grid-column-start: 7;
             grid-column-end: 11;
             grid-row-start: 4;
             grid-row-end: 5;
             align-self: center;
+        }
         }
 
        /*  #article4 {
@@ -108,7 +111,108 @@
             grid-row-end: 6;
             align-self: center;
         } */
+
+        /* MOBILE VIEW */
+        @media (max-width: 754px){
+            body {
+            display: grid;
+            width: 100%;
+             /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
+            grid-template-rows: 75px calc(100vh - 75px) 2000px 200px;  /* Zeilenhöhe */
+            /*grid-column-gap: 0.7%;*/
+            background-color: #161834;
+            grid-template-areas: 
+                "nav"
+                "header"
+                "main"
+                "footer";
+        }
+
+            main{
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(15, 1fr);
+                grid-template-columns: 7vw 86vw 7vw; 
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+                grid-template-areas: 
+                ". . ."
+                ". maingamepic ."
+                ". . ."
+                ". article1 ."
+                ". . ."
+                ". . ."
+                ". balldlcpic ."
+                ". . ."
+                ". article2 ."
+                ". . ."
+                ". . ."
+                ". trackingballpic ."
+                ". . ."
+                ". article3 ."
+                ". . .";  
+
+            }
         
+            #maingamepic {
+                grid-area: maingamepic;
+               /*  grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2; */
+                width: 86vw;
+                height: auto;
+            }
+
+            #balldlcpic {
+                grid-area: balldlcpic;
+              /*   grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 4;
+                grid-row-end: 5; */
+                width: 86vw;
+                height: auto;
+            }
+
+            #trackingballpic {
+                grid-area: trackingballpic;
+                width: 86vw;
+                height: auto;
+               /*  grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 6;
+                grid-row-end: 7; */
+            }
+
+            #article1 {
+                grid-area: article1;
+                align-self: center;
+                /* grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4; */
+            }
+
+            #article2 {
+                grid-area: article2;
+                align-self: center;
+              /*   grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 5;
+                grid-row-end: 6; */
+            }
+
+            #article3 {
+                grid-area: article3;
+                align-self: center;
+                /* grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 7;
+                grid-row-end: 8; */
+            }
+
+        }
 
        
     </style>
@@ -168,71 +272,74 @@
   
 	  <img src="img/maingame.png"  id="maingamepic"/>
   	<div id="article1"><h1>DAS VR-Sportspiel</h1>
-	    <p> Produkt bietet ein einzigartiges, virtuelles Sporterlebnis, in dem Sie spielend fit werden! </p> 
-	    <br><button>  Zum Produkt  </button></br>
+	    <p> Wir bieten dir ein einzigartiges, virtuelles Sporterlebnis, mit dem du spielend leicht fit wirst! Trainiere, boxe und renne dich fit! </p> 
+	    <br><button>  Zum Produkt  </button>
     </div>
     
 	<img src="img/ballgame.png" id="balldlcpic"/>
-  	<div id="article2"><h1>Ballsport DLC</h1>
+  	<div id="article2"><h1>Ballsport-DLC</h1>
 	    <p> 
-            Jetzt erhältlich!
-            Der Ballsport DLC bringt Ihnen das Gefühl mitten im Fußballspiel zu sein direkt in Ihr Wohnzimmer!
+            Du betrittst die Arena, tausende von Fans jubeln dir zu. Dann geht es los, du läufst dich frei, bekommst den Ball. 
+            Du dribbelst dich nach vorne, trickst den letzten Abwehrspieler aus und schießt. TOOOOOR!
+            <br> Unser neuer Ballsport-DLC bringt dir das Stadion direkt in dein Wohnzimmer!
+            <br> Jetzt erhältlich! 
         </p>
-		<br><button>  Zum DLC  </button></br>
+		<br><button>  Zum DLC  </button>
     </div>
     
 	<img src="img/trackingball.png" id="trackingballpic"/>
-	<div id="article3"><h1>jetzt auch Kompatibel mit Tracking Balls</h1>
+	<div id="article3"><h1>Jetzt auch Kompatibel mit Tracking Balls</h1>
         <p>
-            Sind sie stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für Sie. 
-            Mit den neuen Tracking Balls, verwandeln Sie jeden Alltagsgegenstand in ein Sportgerät!
+            Bist du stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für dich. 
+            Mit den neuen Tracking Balls, verwandelst du jeden Alltagsgegenstand in ein Sportgerät!
         </p>
-		<br><button>  Zum Zubehör  </button></br>
+		<br><button>  Zum Zubehör  </button>
     </div>
     
   
 </main>
-	
 <footer>
-  <h1>Links</h1>
         <!-- Aufzählung der Footer Links -->
-        <div class="footerHeadlineLinks">
-        </div>
-        <div class="supportLink">
-            <a href="#">Support</a>
-        </div>
-        <div class="aboutUsLink">
-            <a href="#">Über Uns</a>
-        </div>
-        <div class="impressumLink">
-            <a href="#">Impressum</a>
-        </div>
- 
-        <!-- Aufzählung des Newsletters -->
-        <div class="newsLetterHeadline">
-            <h1>Newsletter</h1>
-        </div>
-        <div class="newsLetterTextArea">
-                <div id="txtArea" style="resize:none">
-                    <textarea placeholder="E-Mail Adresse" rows="1" ></textarea>
-                </div>
-                <div id="buttons">
-                    <input id="submitButton" type="button" value="Jetzt Anmelden" />
-                </div>
-        </div>
-       <!-- Aufzählung der Socialmedia Links-->
-        <div class="socialMediaHeadline">
-            <h1>Community</h1>
-        </div>
-        <div class="youtubeLink">
-            <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" /></a>
-        </div>
-        <div class="twitterLink">
-            <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" /></a>
-        </div>
-        <div class="instagramLink">
-            <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" /></a>
-        </div>
-</footer>
+    <h1>Links</h1>
+          <!-- Aufzählung der Footer Links -->
+          <div class="footerHeadlineLinks">
+          </div>
+          <div class="supportLink">
+              <a href="#">Support</a>
+          </div>
+          <div class="aboutUsLink">
+              <a href="#">Über Uns</a>
+          </div>
+          <div class="impressumLink">
+              <a href="#">Impressum</a>
+          </div>
+   
+          <!-- Aufzählung des Newsletters -->
+          <div class="newsLetterHeadline">
+              <h1>Newsletter</h1>
+          </div>
+          <div class="newsLetterTextArea">
+                  <div id="txtArea" style="resize:none">
+                      <textarea placeholder="E-Mail Adresse" rows="1" ></textarea>
+                  </div>
+                  <div id="buttons">
+                      <input id="submitButton" type="button" value="Jetzt Anmelden" />
+                  </div>
+          </div>
+         <!-- Aufzählung der Socialmedia Links-->
+          <div class="socialMediaHeadline">
+              <h1>Community</h1>
+          </div>
+          <div class="youtubeLink">
+              <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" /></a>
+          </div>
+          <div class="twitterLink">
+              <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" /></a>
+          </div>
+          <div class="instagramLink">
+              <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" /></a>
+          </div>
+  </footer>	
+
 </body>
 </html>
