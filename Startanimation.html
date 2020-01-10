@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>VRise</title>
     <link rel="stylesheet" href="style.css">
+    <script src="jquery-3.4.1.min.js"></script>
     <style>
 
         body {
@@ -232,7 +233,7 @@
             100% {left: 55vw; transform: translateX(-50%);}
         }
 
-        #startAnimationLogo {
+        #logo {
             width: 15vw;
             height: auto;
             position: absolute;
@@ -250,10 +251,15 @@
             100% {left: 35vw; transform: translateX(-50%);}
         }
 
+
+
+
+
        
     </style>
     <script>
-
+       
+        
         function prepareAnimation(){
             document.getElementsByTagName("header")[0].setAttribute("style", "display: none");
             document.getElementsByTagName("main")[0].setAttribute("style", "display: none");
@@ -306,10 +312,9 @@
         
     </script>
 </head>
-
-<body onresize="resize()" onload="prepareAnimation()";>
+<body onresize="resize();" onload="prepareAnimation()";>
     <div id="startAnimation">
-        <img id="startAnimationLogo" src="img/logo.png" alt="">
+        <img id="logo" src="img/logo.png" alt="">
         <h1>VRise</h1>
     </div>
     <div class="navWrapper">
