@@ -25,11 +25,15 @@
         header {
             background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
             background-size: cover;
-            
             grid-area: header;
             grid-row-start: 1;
             grid-row-end: 3;
             z-index: 0;
+        }
+
+        .logoHomeButton {
+            position: relative;
+            left: 1000px;
         }
         
         /*DestopView*/
@@ -214,64 +218,9 @@
 
         }
 
-        #startAnimation h1 {
-            font-size: 8vw;
-            font-weight: 700;
-            position: absolute;
-            top: 40vh;
-            left: 55vw;
-            transform: translateX(-50%);
-            display: inline-block;
-            animation-name: startAnimationH1;
-            animation-duration: 2.5s;
-            animation-iteration-count: 1;
-        }
-
-        @keyframes startAnimationH1 {
-            0% {left: 200%; transform: translateX(-50%);}
-            100% {left: 55vw; transform: translateX(-50%);}
-        }
-
-        #startAnimationLogo {
-            width: 15vw;
-            height: auto;
-            position: absolute;
-            top: 32vh;
-            left: 35vw;
-            transform: translateX(-50%);
-            display: inline-block;
-            animation-name: startAnimationLogo;
-            animation-duration: 2.5s;
-            animation-iteration-count: 1;
-        }
-
-        @keyframes startAnimationLogo {
-            0% {left: -100%; transform: translateX(-50%);}
-            100% {left: 35vw; transform: translateX(-50%);}
-        }
-
        
     </style>
     <script>
-
-        function prepareAnimation(){
-            document.getElementsByTagName("header")[0].setAttribute("style", "display: none");
-            document.getElementsByTagName("main")[0].setAttribute("style", "display: none");
-            document.getElementsByTagName("footer")[0].setAttribute("style", "display: none");
-            document.getElementsByClassName("navWrapper")[0].setAttribute("style", "display: none");
-            document.getElementsByTagName("body")[0].setAttribute("style", "width: 100vw; height: 100vh;");
-            timeoutID = window.setTimeout(animationEnd, 4000);
-        }
-
-        function animationEnd() {
-            document.getElementsByTagName("header")[0].removeAttribute("style");
-            document.getElementsByTagName("main")[0].removeAttribute("style");
-            document.getElementsByTagName("footer")[0].removeAttribute("style");
-            document.getElementsByClassName("navWrapper")[0].removeAttribute("style");
-            document.getElementsByTagName("body")[0].removeAttribute("style");
-            document.getElementById("startAnimation").setAttribute("style", "display: none");
-        }
-
         function resize() {
             if(screen.width > 754 && aufgeklappt == true){
                 
@@ -306,11 +255,9 @@
         
     </script>
 </head>
-
-<body onresize="resize()" onload="prepareAnimation()";>
+<body onresize="resize()">
     <div id="startAnimation">
-        <img id="startAnimationLogo" src="img/logo.png" alt="">
-        <h1>VRise</h1>
+        <img src="" alt="">
     </div>
     <div class="navWrapper">
         <nav>
