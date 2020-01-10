@@ -224,17 +224,24 @@ footer {
     display: grid;
     grid-template-columns: 7vw repeat(12, 1fr) 7vw;
     grid-column-gap: 0.7vw;
-    grid-template-areas: 
+    grid-template-areas:
         ". . . . . . . . . . . ." 
-        "socialMediaHeadLine socialMediaHeadline  . . .newsLetterHeadline  . . . footerHeadlineLinks . ."
         ". . . . . . . . . . . ." 
-        ". youtubeLink twitterLink instagramLink  . newsLetterTextArea submitButtonClass  . . supportLink aboutUsLink impressumLink" 
+        ". . socialMediaHeadline  socialMediaHeadline . . newsLetterHeadline  . . footerHeadlineLinks . ."
+        ". . . . . . . . . . . ."
+        ". . . . . . . . . . . ." 
+        ". . youtubeLink twitterLink instagramLink . newsLetterTextArea submitButtonClass . supportLink aboutUsLink impressumLink" 
         
+}
+
+footer h1{
+    font-size: 30px;
 }
 
 footer a{
     text-decoration: none;
     color: white;
+    font-size: 16px;
 }
 
 footer a:hover {
@@ -293,8 +300,8 @@ footer textarea {
     margin: 0;
     padding: 0;
     width: 300px;
-    height: 28px;
-    font-size: 18px;
+    height: 24px;
+    font-size: 14px;
     text-align: inherit;
     font-family: Montserrat;
 }
@@ -305,13 +312,13 @@ footer input {
     color: #4B4A4A;
     background-color: white;
     font-family: Montserrat;
-    border-radius: 10px;
-    border: 1px solid #707070;
+    border-radius: 20px;
+    border: 2px solid #707070;
     text-align: center;
     margin: -10px;
-    padding-bottom: 7px;
+    move-to: newsLetterTextArea;
     width: 150px;
-    height: 28px;
+    height: 30px;
 }
 
     footer input:hover {
@@ -326,6 +333,12 @@ footer input {
     }
 
 /* Die Communitysektion des Footers*/
+
+.Logo{
+  height: 50%;
+  width: auto;
+}
+
 .socialMediaHeadline {
     grid-area: socialMediaHeadline;
     display: grid;
