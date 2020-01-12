@@ -118,7 +118,7 @@
             display: grid;
             width: 100%;
              /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
-            grid-template-rows: 75px calc(100vh - 75px) 2000px 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px calc(100vh - 75px) 2000px 400px;  /* Zeilenhöhe */
             /*grid-column-gap: 0.7%;*/
             background-color: #161834;
             grid-template-areas: 
@@ -390,13 +390,13 @@
           <div class="newsLetterHeadline">
               <h1>Newsletter</h1>
           </div>
-          <div class="newsLetterTextArea">
-                  <div id="txtArea" style="resize:none">
-                      <textarea placeholder="E-Mail Adresse" rows="1" ></textarea>
-                  </div>
-                  <div id="buttons">
-                      <input id="submitButton" type="button" value="Jetzt Anmelden" />
-                  </div>
+          <div class="newsLetterMailInput">
+                  
+            <input id="emailInput" type="text" placeholder="E-Mail Adresse" />
+                  
+                  
+            <input id="submitButton" type="button" value="Jetzt Anmelden" />
+                  
           </div>
          <!-- Aufzählung der Socialmedia Links-->
           <div class="socialMediaHeadline">

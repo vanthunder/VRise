@@ -37,7 +37,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15pt;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
 }
 
 button {
@@ -55,6 +55,10 @@ main h1 {
 
 p {
     font-size: 15pt;
+    color: white;
+}
+
+h1 {
     color: white;
 }
 
@@ -219,35 +223,34 @@ footer {
     display: grid;
     grid-template-columns: 7vw repeat(12, 1fr) 7vw;
     grid-column-gap: 0.7vw;
-    grid-template-areas: ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . socialMediaHeadline  socialMediaHeadline . . newsLetterHeadline  . . footerHeadlineLinks . ." ". . . . . . . . . . . ." ". . . . . . . . . . . ." ". . youtubeLink twitterLink instagramLink . newsLetterTextArea submitButtonClass . supportLink aboutUsLink impressumLink"
+    justify-items: start;
+    grid-template-areas: 
+    ". . . . . . . . . . . . . ." 
+    ". . . . . . . . . . . . . ." 
+    ". socialMediaHeadline  socialMediaHeadline . . newsLetterHeadline  . . . . footerHeadlineLinks . . ." 
+    ". . . . . . . . . . . . . ." 
+    ". youtubeLink twitterLink instagramLink . newsLetterMailInput newsLetterMailInput newsLetterMailInput newsLetterMailInput . supportLink aboutUsLink impressumLink ."
 }
 
-    footer h1 {
-        font-size: 30px;
-    }
+footer h1 {
+    font-size: 20px;
+}
 
-    footer a {
-        text-decoration: none;
-        color: white;
-        font-size: 16px;
-    }
-
-        footer a:hover {
-            color: #ff8400;
-        }
-
-h1 {
+footer a {
+    text-decoration: none;
     color: white;
+    font-size: 16px;
 }
 
-/* Alle Links für die Website, die im Footer aufgeführt sind */
+footer a:hover {
+     color: #ff8400;
+}
+
+
+
+
 .footerHeadlineLinks {
     grid-area: footerHeadlineLinks;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . . . . . . . . . . . ."
 }
 
 .supportLink {
@@ -268,49 +271,38 @@ h1 {
 /* Die Newslettersektion des Footers*/
 .newsLetterHeadline {
     grid-area: newsLetterHeadline;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . ."
 }
 
-.newsLetterTextArea {
+.newsLetterMailInput {
     display: inline-flex;
-    grid-area: newsLetterTextArea;
+    grid-area: newsLetterMailInput;
 }
 
-
-footer textarea {
-    border-radius: 7px;
-    border: 1px solid #707070;
-    border-collapse: collapse;
-    resize: none;
-    margin: 0;
-    padding: 0;
-    width: 300px;
-    height: 24px;
-    font-size: 14px;
-    text-align: inherit;
-    font-family: Montserrat;
-}
-
-.submitButtonClass {
-    grid-area: submitButtonClass;
-}
-
-footer input {
+#emailInput {
+    width: 60%;
     color: #4B4A4A;
     background-color: white;
     font-family: Montserrat;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid #707070;
     text-align: center;
-    margin: -10px;
-    move-to: newsLetterTextArea;
-    width: 150px;
     height: 30px;
 }
+
+#submitButton {
+    color: #4B4A4A;
+    background-color: white;
+    font-family: Montserrat;
+    border-radius: 10px;
+    border: 2px solid #707070;
+    text-align: center;
+    width: 40%;
+    height: 30px;
+    margin-left: -5%;
+}
+
+
+
 
     footer input:hover {
         box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
@@ -332,11 +324,6 @@ footer input {
 
 .socialMediaHeadline {
     grid-area: socialMediaHeadline;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . ."
 }
 
 .youtubeLink {
@@ -349,6 +336,49 @@ footer input {
 
 .instagramLink {
     grid-area: instagramLink;
+}
+
+.youtubeLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+}
+
+.twitterLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+}
+
+.instagramLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+    position: relative;
+    top: -3px;
+}
+
+@media (max-width: 754px) {
+    footer {
+        width: 100vw;
+        background-color: #25214F;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 7vw repeat(3, 1fr) 7vw;
+        grid-column-gap: 0.7vw;
+        justify-items: start;
+        grid-template-areas: 
+        ". . . . ." 
+        ". footerHeadlineLinks footerHeadlineLinks footerHeadlineLinks ."
+        ". supportLink aboutUsLink impressumLink ."
+        ". . . . ." 
+        ". socialMediaHeadline  socialMediaHeadline socialMediaHeadline ." 
+        ". youtubeLink twitterLink instagramLink ." 
+        ". . . . ." 
+        ". newsLetterHeadline newsLetterHeadline newsLetterHeadline ."
+        ". newsLetterMailInput newsLetterMailInput newsLetterMailInput .";
+
+    }
 }
 
 /* 
