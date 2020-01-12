@@ -280,7 +280,6 @@ footer a:hover {
 }
 
 #emailInput {
-    width: 60%;
     color: #4B4A4A;
     background-color: white;
     font-family: Montserrat;
@@ -288,6 +287,7 @@ footer a:hover {
     border: 1px solid #707070;
     text-align: center;
     height: 30px;
+    width: 240px;
     text-align: start;
 }
 
@@ -380,6 +380,18 @@ footer a:hover {
         ". newsLetterHeadline newsLetterHeadline newsLetterHeadline ."
         ". newsLetterMailInput newsLetterMailInput newsLetterMailInput .";
 
+    }
+
+    #emailInput {
+        width: 60%;
+        color: #4B4A4A;
+        background-color: white;
+        font-family: Montserrat;
+        border-radius: 10px;
+        border: 1px solid #707070;
+        text-align: center;
+        height: 30px;
+        text-align: start;
     }
 }
 
