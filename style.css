@@ -37,7 +37,7 @@ html {
     font-family: 'Montserrat', sans-serif;
     font-weight: 400;
     font-size: 15pt;
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
 }
 
 button {
@@ -45,6 +45,7 @@ button {
     padding: 8px 12px;
     text-align: center;
     border: none;
+    background-color: white;
 }
 
 main h1 {
@@ -284,9 +285,10 @@ footer a:hover {
     background-color: white;
     font-family: Montserrat;
     border-radius: 10px;
-    border: 2px solid #707070;
+    border: 1px solid #707070;
     text-align: center;
     height: 30px;
+    text-align: start;
 }
 
 #submitButton {
@@ -294,7 +296,7 @@ footer a:hover {
     background-color: white;
     font-family: Montserrat;
     border-radius: 10px;
-    border: 2px solid #707070;
+    border: 1px solid #707070;
     text-align: center;
     width: 40%;
     height: 30px;
