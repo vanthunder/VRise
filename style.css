@@ -25,7 +25,7 @@
 /* ===============
 GLOBAL SETTINGS 
 =============== */
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
 *, *::before, *::after {
     margin: 0;
@@ -40,14 +40,15 @@ html {
     overflow-x: hidden;
 }
 
-button{
+button {
     border-radius: 10px;
     padding: 8px 12px;
     text-align: center;
     border: none;
+    background-color: white;
 }
 
-main h1{
+main h1 {
     font-size: 22pt;
     color: white;
     margin-bottom: 20px;
@@ -58,106 +59,106 @@ p {
     color: white;
 }
 
+h1 {
+    color: white;
+}
+
 /* ===============
 NAVIGATION
 =============== */
 
 .navWrapper {
     /*  background-color: white; */
-     grid-area: nav;
-     z-index: 1;
-     /* position: fixed; */
- }
+    grid-area: nav;
+    z-index: 1;
+    /* position: fixed; */
+}
 
- nav {
-     /* background-color: white; */
-     width: 100%;
-     /* height: 75px; */
-     z-index: 0;
-     position: fixed;
-     
-     
- }
+nav {
+    /* background-color: white; */
+    width: 100%;
+    /* height: 75px; */
+    z-index: 0;
+    position: fixed;
+}
 
- nav ul {
-     width: 100%;
-     height: 75px;
-     display: grid;
-     grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
-     grid-template-rows: 75px;
-     grid-column-gap: 0.7vw;
-     grid-template-areas: 
-         "logo logo logo . produkte . zubehör . news . . . sandwich ."
- }
+    nav ul {
+        width: 100%;
+        height: 75px;
+        display: grid;
+        grid-template-columns: 7vw repeat(12, 1fr) 7vw;
+        grid-template-rows: 75px;
+        grid-column-gap: 0.7vw;
+        grid-template-areas: "logo logo logo . produkte . zubehör . news . . . sandwich ."
+    }
 
- nav li {
-     list-style: none;
-    /*  display: flex;
+    nav li {
+        list-style: none;
+        /*  display: flex;
      flex-direction: row;
      align-items: center; */
-     font-size: 18px; /* vorher: 17px */
-     align-self: center;
- }
+        font-size: 18px; /* vorher: 17px */
+        align-self: center;
+    }
 
- nav a {
-     text-decoration: none;
-     color: #161834;
- }
+    nav a {
+        text-decoration: none;
+        color: #161834;
+    }
 
- nav a:hover {
-     color: #ff8400;
- }
+        nav a:hover {
+            color: #ff8400;
+        }
 
- .produkte {
-     grid-area: produkte;
- }
+.produkte {
+    grid-area: produkte;
+}
 
- .zubehör {
-     grid-area: zubehör;
- }
+.zubehör {
+    grid-area: zubehör;
+}
 
- .news {
-     grid-area: news;
- }
+.news {
+    grid-area: news;
+}
 
- .logoHomeButton {
-     z-index: 1;
-     grid-area: logo;
-     align-self: start;
-     transform-origin: top;
-     
- }
+.logoHomeButton {
+    z-index: 1;
+    grid-area: logo;
+    align-self: start;
+    transform-origin: top;
+}
 
- .logoImage {
-     width: 100%;
- }
+.logoImage {
+    width: 100%;
+}
 
- .sandwich {
-     grid-area: sandwich;
-     width: 30px;
-     height: auto;
-     z-index: 1;
-     display: none;
- }
+.sandwich {
+    grid-area: sandwich;
+    width: 30px;
+    height: auto;
+    z-index: 1;
+    display: none;
+}
 
- .sandwich:hover {
-     cursor: pointer;
- }
+    .sandwich:hover {
+        cursor: pointer;
+    }
 
- 
 
- .background {
-     grid-column-start: 2;
-     grid-column-end: 15;
-     grid-row-start: 1;
-     grid-row-end: 2;
-     background-color: white;
-     z-index: -1;
-     height: 75px;
- }
 
- @media (max-width: 754px){
-    .sandwich{
+.background {
+    grid-column-start: 2;
+    grid-column-end: 15;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: white;
+    z-index: -1;
+    height: 75px;
+}
+
+@media (max-width: 754px) {
+    .sandwich {
         display: initial;
     }
 
@@ -189,29 +190,28 @@ NAVIGATION
         grid-row-start: 2;
         grid-row-end: 3;
     }
-   
+
     .zubehör {
         grid-column-start: 1;
         grid-column-end: 15;
         grid-row-start: 3;
         grid-row-end: 4;
     }
-   
+
     .news {
         grid-column-start: 1;
         grid-column-end: 15;
         grid-row-start: 4;
         grid-row-end: 5;
     }
-
- }
+}
 
 /* ===============
 MAIN
 =============== */
 
-  
-    
+
+
 
 
 /* ===============
@@ -224,21 +224,20 @@ footer {
     display: grid;
     grid-template-columns: 7vw repeat(12, 1fr) 7vw;
     grid-column-gap: 0.7vw;
-    grid-template-areas:
-        ". . . . . . . . . . . ." 
-        ". . . . . . . . . . . ." 
-        ". . socialMediaHeadline  socialMediaHeadline . . newsLetterHeadline  . . footerHeadlineLinks . ."
-        ". . . . . . . . . . . ."
-        ". . . . . . . . . . . ." 
-        ". . youtubeLink twitterLink instagramLink . newsLetterTextArea submitButtonClass . supportLink aboutUsLink impressumLink" 
-        
+    justify-items: start;
+    grid-template-areas: 
+    ". . . . . . . . . . . . . ." 
+    ". . . . . . . . . . . . . ." 
+    ". socialMediaHeadline  socialMediaHeadline . . newsLetterHeadline  . . . . footerHeadlineLinks . . ." 
+    ". . . . . . . . . . . . . ." 
+    ". youtubeLink twitterLink instagramLink . newsLetterMailInput newsLetterMailInput newsLetterMailInput newsLetterMailInput . supportLink aboutUsLink impressumLink ."
 }
 
-footer h1{
-    font-size: 30px;
+footer h1 {
+    font-size: 20px;
 }
 
-footer a{
+footer a {
     text-decoration: none;
     color: white;
     font-size: 16px;
@@ -248,18 +247,11 @@ footer a:hover {
      color: #ff8400;
 }
 
-h1 {
-    color: white;
-}
 
-/* Alle Links für die Website, die im Footer aufgeführt sind */
+
+
 .footerHeadlineLinks {
     grid-area: footerHeadlineLinks;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . . . . . . . . . . . ."
 }
 
 .supportLink {
@@ -267,10 +259,11 @@ h1 {
     grid-area: supportLink;
 }
 
-.impressumLink{
+.impressumLink {
     color: white;
     grid-area: impressumLink;
 }
+
 .aboutUsLink {
     float: left;
     color: white;
@@ -279,47 +272,40 @@ h1 {
 /* Die Newslettersektion des Footers*/
 .newsLetterHeadline {
     grid-area: newsLetterHeadline;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . ."
 }
 
-.newsLetterTextArea {
+.newsLetterMailInput {
     display: inline-flex;
-    grid-area: newsLetterTextArea;
+    grid-area: newsLetterMailInput;
 }
 
-
-footer textarea {
-    border-radius: 7px;
-    border: 1px solid #707070;
-    border-collapse: collapse;
-    resize: none;
-    margin: 0;
-    padding: 0;
-    width: 300px;
-    height: 24px;
-    font-size: 14px;
-    text-align: inherit;
-    font-family: Montserrat;
-}
-.submitButtonClass {
-    grid-area: submitButtonClass;
-}
-footer input {
+#emailInput {
+    width: 60%;
     color: #4B4A4A;
     background-color: white;
     font-family: Montserrat;
-    border-radius: 20px;
-    border: 2px solid #707070;
-    text-align: center;
-    margin: -10px;
-    move-to: newsLetterTextArea;
-    width: 150px;
+    border-radius: 10px;
+    border: 1px solid #707070;
+    text-align: start;
     height: 30px;
+    /* width: 240px;  */
+    width: 22vw;
 }
+
+#submitButton {
+    color: #4B4A4A;
+    background-color: white;
+    font-family: Montserrat;
+    border-radius: 10px;
+    border: 1px solid #707070;
+    text-align: center;
+    width: 40%;
+    height: 30px;
+    margin-left: -5%;
+}
+
+
+
 
     footer input:hover {
         box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
@@ -334,31 +320,80 @@ footer input {
 
 /* Die Communitysektion des Footers*/
 
-.Logo{
-  height: 50%;
-  width: auto;
+.Logo {
+    height: 50%;
+    width: auto;
 }
 
 .socialMediaHeadline {
     grid-area: socialMediaHeadline;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 50% 50%;
-    grid-column-gap: 0vw;
-    grid-template-areas: ". . . ."
 }
 
 .youtubeLink {
     grid-area: youtubeLink;
-  
 }
 
-.twitterLink{
+.twitterLink {
     grid-area: twitterLink;
 }
 
-.instagramLink{
+.instagramLink {
     grid-area: instagramLink;
+}
+
+.youtubeLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+}
+
+.twitterLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+}
+
+.instagramLink img {
+    width: 3vw;
+    min-width: 30px;
+    height: auto;
+    position: relative;
+    top: -3px;
+}
+
+@media (max-width: 754px) {
+    footer {
+        width: 100vw;
+        background-color: #25214F;
+        grid-area: footer;
+        display: grid;
+        grid-template-columns: 7vw repeat(3, 1fr) 7vw;
+        grid-column-gap: 0.7vw;
+        justify-items: start;
+        grid-template-areas: 
+        ". . . . ." 
+        ". footerHeadlineLinks footerHeadlineLinks footerHeadlineLinks ."
+        ". supportLink aboutUsLink impressumLink ."
+        ". . . . ." 
+        ". socialMediaHeadline  socialMediaHeadline socialMediaHeadline ." 
+        ". youtubeLink twitterLink instagramLink ." 
+        ". . . . ." 
+        ". newsLetterHeadline newsLetterHeadline newsLetterHeadline ."
+        ". newsLetterMailInput newsLetterMailInput newsLetterMailInput .";
+
+    }
+
+    #emailInput {
+        width: 60%;
+        color: #4B4A4A;
+        background-color: white;
+        font-family: Montserrat;
+        border-radius: 10px;
+        border: 1px solid #707070;
+        text-align: center;
+        height: 30px;
+        text-align: start;
+    }
 }
 
 /* 

@@ -1,0 +1,35 @@
+#startAnimation h1 {
+    font-size: 8vw;
+    font-weight: 700;
+    position: absolute;
+    top: 40vh;
+    left: 55vw;
+    transform: translateX(-50%);
+    display: inline-block;
+    animation-name: startAnimationH1;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes startAnimationH1 {
+    0% {left: 200%; transform: translateX(-50%);}
+    100% {left: 55vw; transform: translateX(-50%);}
+}
+
+#startAnimationLogo {
+    width: 15vw;
+    height: auto;
+    position: absolute;
+    top: 32vh;
+    left: 35vw;
+    transform: translateX(-50%);
+    display: inline-block;
+    animation-name: startAnimationLogo;
+    animation-duration: 2.5s;
+    animation-iteration-count: 1;
+}
+
+@keyframes startAnimationLogo {
+    0% {left: -100%; transform: translateX(-50%);}
+    100% {left: 35vw; transform: translateX(-50%);}
+}

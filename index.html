@@ -1,19 +1,19 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="VRise DAS Virtual Reality Sportspiel!"> 
     <title>VRise</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="startAnimation.css">
     <style>
 
         body {
             display: grid;
             width: 100%;
-             /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
             grid-template-rows: 75px calc(100vh - 75px) 1600px 200px;  /* Zeilenhöhe */
-            /*grid-column-gap: 0.7%;*/
             background-color: #161834;
             grid-template-areas: 
                 "nav"
@@ -35,97 +35,79 @@
         /*DestopView*/
 		@media (min-width: 755px){
             main{
-			grid-area: main;
-            display: grid;
-            width: 100%;
-			grid-template-rows: repeat(4, 1fr);
-			grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
-            grid-template-rows: 75px;
-            grid-column-gap: 0.7vw;
-            background-color: #161834;
-        }
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+                grid-template-rows: 75px;
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+            }
         
-        #maingamepic {
-            grid-area: maingamepic;
-            grid-column-start: 1;
-            grid-column-end: 7;
-            grid-row-start: 2;
-            grid-row-end: 4;
-            width: 100%;
-            height: auto;
-        }
+            #maingamepic {
+                grid-area: maingamepic;
+                grid-column-start: 1;
+                grid-column-end: 7;
+                grid-row-start: 2;
+                grid-row-end: 4;
+                width: 100%;
+                height: auto;
+            }
 
-        #balldlcpic {
-            grid-area: balldlcpic;
-            grid-column-start: 10;
-            grid-column-end: 15;
-            grid-row-start: 3;
-            grid-row-end: 5;
-            width: 95%;
-            height: auto;
-        }
+            #balldlcpic {
+                grid-area: balldlcpic;
+                grid-column-start: 10;
+                grid-column-end: 15;
+                grid-row-start: 3;
+                grid-row-end: 5;
+                width: 95%;
+                height: auto;
+            }
 
-        #trackingballpic {
-            grid-area: trackingballpic;
-            grid-column-start: 1;
-            grid-column-end: 6;
-            grid-row-start: 4;
-            grid-row-end: 5;
-            width: 100%;
-            height: auto;
-        }
+            #trackingballpic {
+                grid-area: trackingballpic;
+                grid-column-start: 1;
+                grid-column-end: 6;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                width: 100%;
+                height: auto;
+            }
 
-        #article1 {
-            grid-area: article1;
-            grid-column-start: 8;
-            grid-column-end: 12;
-            grid-row-start: 2;
-            grid-row-end: 3;
-            align-self: center;
-        }
+            #article1 {
+                grid-area: article1;
+                grid-column-start: 8;
+                grid-column-end: 12;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                align-self: center;
+            }
 
-        #article2 {
-            grid-area: article2;
-            grid-column-start: 5;
-            grid-column-end: 9;
-            grid-row-start: 3;
-            grid-row-end: 4;
-            align-self: center;
-        }
+            #article2 {
+                grid-area: article2;
+                grid-column-start: 5;
+                grid-column-end: 9;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                align-self: center;
+            }
 
-        #article3 {
-            grid-area: article3;
-            grid-column-start: 7;
-            grid-column-end: 11;
-            grid-row-start: 4;
-            grid-row-end: 5;
-            align-self: center;
+            #article3 {
+                grid-area: article3;
+                grid-column-start: 7;
+                grid-column-end: 11;
+                grid-row-start: 4;
+                grid-row-end: 5;
+                align-self: center;
+            }
         }
-        }
-
-       /*  #article4 {
-            grid-template-areas: article3;
-            grid-column-start: 7;
-            grid-column-end: 11;
-            grid-row-start: 5;
-            grid-row-end: 6;
-            align-self: center;
-        } */
 
         /* MOBILE VIEW */
         @media (max-width: 754px){
             body {
-            display: grid;
             width: 100%;
-             /*grid-template-columns: 7% repeat(12, 1fr) 7%;  Spaltenbreite  */
-            grid-template-rows: 75px calc(100vh - 75px) 2000px 200px;  /* Zeilenhöhe */
-            /*grid-column-gap: 0.7%;*/
-            background-color: #161834;
-            grid-template-areas: 
-                "nav"
-                "header"
-                "main"
-                "footer";
+            grid-template-rows: 75px calc(100vh - 75px) 2000px 400px;  /* Zeilenhöhe */
         }
 
             main{
@@ -157,20 +139,12 @@
         
             #maingamepic {
                 grid-area: maingamepic;
-               /*  grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 1;
-                grid-row-end: 2; */
                 width: 86vw;
                 height: auto;
             }
 
             #balldlcpic {
                 grid-area: balldlcpic;
-              /*   grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 4;
-                grid-row-end: 5; */
                 width: 86vw;
                 height: auto;
             }
@@ -179,91 +153,44 @@
                 grid-area: trackingballpic;
                 width: 86vw;
                 height: auto;
-               /*  grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 6;
-                grid-row-end: 7; */
             }
 
             #article1 {
                 grid-area: article1;
                 align-self: center;
-                /* grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 3;
-                grid-row-end: 4; */
             }
 
             #article2 {
                 grid-area: article2;
                 align-self: center;
-              /*   grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 5;
-                grid-row-end: 6; */
             }
 
             #article3 {
                 grid-area: article3;
                 align-self: center;
-                /* grid-column-start: 2;
-                grid-column-end: 3;
-                grid-row-start: 7;
-                grid-row-end: 8; */
             }
 
         }
-
        
     </style>
-    <script>
-        function resize() {
-            if(screen.width > 754 && aufgeklappt == true){
-                
-                sandwichClick();
-            }
-        }
-
-        var aufgeklappt = false;
-        var menüpunkte = document.getElementsByClassName("menüpunkt");
-        function sandwichClick() {
-
-               if (aufgeklappt == false) {
-                    for(var i =0; i<3; i++){
-                        menüpunkte[i].setAttribute("style", "display: block");
-                    }
-                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 5; height: 225px;");
-                    aufgeklappt = true;
-               }
-               else {
-                    for(var i =0; i<3; i++){
-                        menüpunkte[i].setAttribute("style", "display: ;");
-                    }
-                    document.getElementsByClassName("background")[0].setAttribute("style", "grid-row-start: 1; grid-row-end: 2; height: 75px;");
-                    aufgeklappt = false;
-               }
-                
-                
-        }
-                
-            
-            
-        
-    </script>
+    <script src="navResponsive.js"></script>
+    <script src="startAnimation.js"></script>
 </head>
-<body onresize="resize()">
+
+<body onresize="resize()" onload="prepareAnimation();">
     <div id="startAnimation">
-        <img src="" alt="">
+        <img id="startAnimationLogo" src="img/logo.png" alt="">
+        <h1>VRise</h1>
     </div>
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li class="produkte">
-                <li class="produkte menüpunkt"><a href="#">Produkte</a></li class="produkte">
+                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="produkte menüpunkt"><a href="#">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="#">News</a></li>
-                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li>
-                <li class="background"><div></div></li>
+                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li> <!-- nav ausklapp-button -->
+                <li class="background"><div></div></li> <!-- Hintergrund für die Navbar -->
             </ul>
         </nav>
     </div>
@@ -273,13 +200,13 @@
     <main>
 
     
-        <img src="img/maingame.png"  id="maingamepic"/>
+        <img src="img/maingame.png"  id="maingamepic" alt="Frau mit VR Brille"/>
         <div id="article1"><h1>DAS VR-Sportspiel</h1>
             <p> Wir bieten dir ein einzigartiges, virtuelles Sporterlebnis, mit dem du spielend leicht fit wirst! Trainiere, boxe und renne dich fit! </p> 
             <br><button>  Zum Produkt  </button>
         </div>
         
-        <img src="img/ballgame.png" id="balldlcpic"/>
+        <img src="img/ballgame.png" id="balldlcpic" alt="Fußball im Tor"/>
         <div id="article2"><h1>Ballsport-DLC</h1>
             <p> 
                 Du betrittst die Arena, tausende von Fans jubeln dir zu. Dann geht es los, du läufst dich frei, bekommst den Ball. 
@@ -290,8 +217,8 @@
             <br><button>  Zum DLC  </button>
         </div>
         
-        <img src="img/trackingball.png" id="trackingballpic"/>
-        <div id="article3"><h1>Jetzt auch Kompatibel mit Tracking Balls</h1>
+        <img src="img/trackingball.png" id="trackingballpic" alt="Trackingball"/>
+        <div id="article3"><h1>Jetzt auch kompatibel mit Tracking Balls</h1>
             <p>
                 Bist du stolzer Besitzer einer HTC Vive, dann bietet dieses Zubehör genau das richtige für dich. 
                 Mit den neuen Tracking Balls, verwandelst du jeden Alltagsgegenstand in ein Sportgerät!
@@ -306,41 +233,39 @@
         <div class="footerHeadlineLinks">
             <h1>Links</h1>
         </div>
-          <div class="supportLink">
-              <a href="#">Support</a>
-          </div>
-          <div class="aboutUsLink">
-              <a href="#">Über Uns</a>
-          </div>
-          <div class="impressumLink">
-              <a href="#">Impressum</a>
-          </div>
+        <div class="supportLink">
+            <a href="#">Support</a>
+        </div>
+        <div class="aboutUsLink">
+            <a href="#">Über Uns</a>
+        </div>
+        <div class="impressumLink">
+            <a href="#">Impressum</a>
+        </div>
    
-          <!-- Aufzählung des Newsletters -->
-          <div class="newsLetterHeadline">
-              <h1>Newsletter</h1>
-          </div>
-          <div class="newsLetterTextArea">
-                  <div id="txtArea" style="resize:none">
-                      <textarea placeholder="E-Mail Adresse" rows="1" ></textarea>
-                  </div>
-                  <div id="buttons">
-                      <input id="submitButton" type="button" value="Jetzt Anmelden" />
-                  </div>
-          </div>
-         <!-- Aufzählung der Socialmedia Links-->
-          <div class="socialMediaHeadline">
-              <h1>Community</h1>
-          </div>
-          <div class="youtubeLink">
-              <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" class="Logo"/></a>
-          </div>
-          <div class="twitterLink">
-              <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" class="Logo"/></a>
-          </div>
-          <div class="instagramLink">
-              <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
-          </div>
+        <!-- Aufzählung des Newsletters -->
+        <div class="newsLetterHeadline">
+            <h1>Newsletter</h1>
+        </div>
+            <div class="newsLetterMailInput">
+            <input id="emailInput" type="text" placeholder="E-Mail Adresse" />
+            <input id="submitButton" type="button" value="Jetzt Anmelden" />
+              
+        </div>
+
+        <!-- Aufzählung der Socialmedia Links-->
+        <div class="socialMediaHeadline">
+            <h1>Community</h1>
+        </div>
+        <div class="youtubeLink">
+            <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" class="Logo"/></a>
+        </div>
+        <div class="twitterLink">
+            <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" class="Logo"/></a>
+        </div>
+        <div class="instagramLink">
+            <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
+        </div>
   </footer>	
 
 </body>

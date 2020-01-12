@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Hier steht die Meta-Description.">  <!-- bitte Beschreibung anpassen-->
+    <meta name="description" content="Hier steht die Meta-Description.">   <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,15 +12,21 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px 1600px 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px calc(100vh - 75px) 1600px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
+                "header"
                 "main"
                 "footer";
         }
 
-        
+        header {
+            /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
+            /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
+            background-size: cover; */
+            grid-area: header;
+        }
         
         /*DestopView*/
 		@media (min-width: 755px){
@@ -40,7 +46,7 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px calc(100vh - 75px) 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
             main{
@@ -82,6 +88,13 @@
             </ul>
         </nav>
     </div>
+
+    <header>
+        <!-- sollte ein einzelnes Titelbild gewünscht sein, füge es nicht hier hinzu, sondern im <style> Tag, 
+            ein Beispielcode dafür steht dort bereit
+            sind es mehrere Titelbilder, füge sie hier als img ein anstatt im Style 
+            sollte gar kein Titelbild gewünscht sein, verwende bitte statt diesem Template das Template ohne Header-->
+    </header> 
 
     <main>
         <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
