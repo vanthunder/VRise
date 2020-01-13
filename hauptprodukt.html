@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Hier steht die Meta-Description.">   <!-- bitte Beschreibung anpassen-->
+    <meta name="description" content="Hier steht die Meta-Description.">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,62 +12,57 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px calc(100vh - 275px) 200px;  /* Zeilenhöhe */
-			grid-template-columns: 100vw;
+            grid-template-rows: 75px 1600px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
-                "header"
+                "main"
                 "footer";
         }
 
-        header {
-            /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
-            /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
-            background-size: cover; */
-            grid-area: header;
-        }
+        
         
         /*DestopView*/
 		@media (min-width: 755px){
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
                 grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
                 grid-template-rows: 75px;
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
-				grid-template-areas: 
-                ". . maingamepic"
-				"balldlcpic . .";  
             }
         }
 
         /* MOBILE VIEW */
         @media (max-width: 754px){
-            header {
+            body {
                 width: 100%;
-                grid-template-rows: 75px calc(100vh - 75px) 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(15, 1fr);
                 grid-template-columns: 7vw 86vw 7vw; 
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
                 grid-template-areas: 
-                "maingamepic Haupttitel ."
-				". . balldlcpic"; 
-            }			
-        }
+                ". . ."
+                ". beispiel ."
+                ". . ."
+                ". beispiel ."
+                ". . .";  
 
+            }
+
+        }
        
     </style>
     <script src="navResponsive.js"></script>
@@ -78,8 +73,8 @@
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
-                <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
+                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="produkte menüpunkt"><a href="#">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="#">News</a></li>
                 <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li> <!-- nav ausklapp-button -->
@@ -88,80 +83,9 @@
         </nav>
     </div>
 
-    <header>
-<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
-				<article class="maintitle" grid-area="Haupttitel">
-			HAUPTSPIEL
-	</article></div>
-		<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
-				<article class="dlctitle" grid-area="DLCtitel">
-			DLCs
-		</div></article>
-
-		<style>
-		.Hauptspiel{
-			position: relative;
-			transform: rotate(5deg);
-			margin-top: -2vw;
-			width: 56vw;
-			
-		}
-		.BallDLC{
-			position: relative;
-			transform: rotate(5deg);
-			margin-left: 30vw;
-			width: 52vw;
-			animation-name: dlc;
-			
-		}
-			.maintitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: -28vw;
-				margin-left: 30vw;
-				color: white;
-				font-size: 3vw;			
-			}
-			.dlctitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: -15vw;
-				margin-left: 66vw;
-				color: white;
-				font-size: 3vw;	
-				animation-name: dlc;
-			}
-			.mainanimation:hover{
-				animation-name: main;
-				animation-duration: 6s;
-				transition-delay: 0s;
-				transition-timing-function: linear;
-				transition-duration: 2s;
-			}
-			@keyframes main{
-				0%{margin-left: 0vw;margin-top: 0vw;}
-				50%{margin-left: 8vw;margin-top: -4vw;}
-				50%{margin-left: 6vw;margin-top: -3vw;}
-			}
-			.dlcanimation:hover{
-				animation-name: dlc;
-				animation-duration: 6s;
-				transition-delay: 0s;
-				transition-timing-function: linear;
-				transition-duration: 2s;
-			}
-			@keyframes dlc{
-				0%{margin-left: 0vw;margin-top: 0vw;}
-				50%{margin-left: 8vw;margin-top: -4vw;}
-				100%{margin-left: 6vw;margin-top: -2vw;}
-			}
-
-			
-		</style>
-    </header> 
-
     <main>
-		
+        <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
+            dies ist wichtig für Screenreader und Suchmaschinen--> 
     </main>
 
     <footer>
