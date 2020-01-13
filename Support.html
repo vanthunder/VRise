@@ -12,24 +12,246 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px 1600px 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px 860px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
                 "main"
                 "footer";
         }
+        main{
+            background-color: #25214F;
+            grid-area: main;
+            display: grid;
+            grid-template-columns: 7vw repeat(12, 1fr) 7vw;
+            grid-column-gap: 0.7vw;
+            justify-items: start;
+            grid-template-areas: 
+            ". . . . . . . . . . . ." 
+            ". . . . . . supportDocument . . . . ."
+        }
 
-        
-        
+        .supportDocument{
+            grid-area: supportDocument;
+            border-radius: 70px;
+            width: auto;
+            height: auto;
+            margin-bottom: 40px;
+            border: 4px solid #FFAD0A;
+            display: grid;
+            grid-template-columns: 7vw repeat(8, 1fr) 7vw;
+            grid-template-rows: repeat(13, 1fr);
+            grid-column-gap: 0.7vw;
+            justify-items: start;
+            grid-template-areas: 
+                ". . . . . . . ."
+                ". . firstNameHeadline . . firstNameInputClass . ."
+                ". . lastNameHeadline . . lastNameInputClass . ."
+                ". . streetHeadline . . streetInputClass . ."
+                ". . postCodeHeadline . . postCodeInputClass . ."
+                ". . cityHeadline . . cityInputClass . ."
+                ". . mailHeadline . . mailInputClass . ."
+                ". . confirmMailHeadline . . confirmMailInputClass . ."
+                ". . systemHeadline . . systemInputClass . ."
+                ". . . . . descriptionInputClass . ."
+                ". . . . . . . ."
+                ". . . . . supportBtnSubmitClass . ."
+                ". . . . . . . ."
+        }
+
+        .firstNameHeadline {
+            grid-area: firstNameHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .lastNameHeadline{
+            grid-area: lastNameHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .streetHeadline {
+            grid-area: streetHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .postCodeHeadline{
+            grid-area: postCodeHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .cityHeadline{
+            grid-area: cityHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .mailHeadline {
+            grid-area: mailHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .confirmMailHeadline{
+            grid-area: confirmMailHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+
+        .systemHeadline{
+            grid-area: systemHeadline;
+            color: white;
+            font-family: Montserrat;
+        }
+        .firstNameInputClass {
+            grid-area: firstNameInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .lastNameInputClass{
+            grid-area: lastNameInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .streetInputClass{
+            grid-area: streetInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .postCodeInputClass{
+            grid-area: postCodeInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .cityInputClass{
+            grid-area: cityInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .mailInputClass{
+            grid-area: mailInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .confirmMailInputClass{
+            grid-area: confirmMailInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .systemInputClass{
+            grid-area: systemInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: center;
+            height: 30px;
+            width: 22vw;
+        }
+        .descriptionInputClass{
+            grid-area: descriptionInputClass;
+            width: 60%;
+            color: #4B4A4A;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 16px;
+            border: 1px solid #707070;
+            text-align: start;
+            height: auto;
+            width: 22vw;
+            resize: none;
+        }
+        .supportBtnSubmitClass{
+            grid-area: supportBtnSubmitClass;
+            color: #4B4A4A;
+            font-size: 14px;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 21px;
+            border: 1px solid #707070;
+            text-align: center;
+            padding-left: 40px;
+            padding-right: 40px;
+            width:  auto;
+            height: 40px;
+        }
+
+        div .supportBtnSubmitClass:hover{
+            box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+            transition: all ease 0.3s;
+        }
+
+        div .supportBtnSubmitClass:active{
+            color: white;
+            background-color: orange;
+            box-shadow: orange 0px 5px 15px, inset rgba(0,0,0,0.15)0px -10px 20px;
+        }
+
+
+
+
         /*DestopView*/
-		@media (min-width: 755px){
-            main{
+        @media (min-width: 755px) {
+            main {
                 grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(4, 1fr);
-                grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+                grid-template-columns: 7vw repeat(12, 1fr) 7vw;
                 grid-template-rows: 75px;
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
@@ -55,12 +277,25 @@
                 Rand Content Rand */
                 grid-template-areas: 
                 ". . ."
-                ". beispiel ."
-                ". . ."
-                ". beispiel ."
-                ". . .";  
+                ". supportDocument ."
+                 
 
             }
+
+            .supportBtnSubmitClass{
+            grid-area: supportBtnSubmitClass;
+            color: #4B4A4A;
+            font-size: 14px;
+            background-color: white;
+            font-family: Montserrat;
+            border-radius: 21px;
+            border: 1px solid #707070;
+            text-align: center;
+            padding-left: 4px;
+            padding-right: 4px;
+            width:  auto;
+            height: 40px;
+        }
 
         }
        
@@ -86,6 +321,28 @@
     <main>
         <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
             dies ist wichtig für Screenreader und Suchmaschinen--> 
+        <div class="supportDocument">
+            <!--Aufzählung der Headlines-->
+            <div class="firstNameHeadline">Vorname:</div>
+            <div class="lastNameHeadline">Nachname:</div>
+            <div class="streetHeadline">Straße:</div>
+            <div class="postCodeHeadline">Postleitzahl:</div>
+            <div class="cityHeadline">Stadt:</div>
+            <div class="mailHeadline">Email:</div>
+            <div class="confirmMailHeadline">Bestätige Email:</div>
+            <div class="systemHeadline">System:</div>
+            <!--Aufzählung der Inputs-->
+            <input id="firstNameInput" class="firstNameInputClass" type="text" />
+            <input id="lastNameInput" class="lastNameInputClass" type="text" />
+            <input id="streetInput" class="streetInputClass" type="text" />
+            <input id="postCodeInput" class="postCodeInputClass" type="text" />
+            <input id="cityInput" class="cityInputClass" type="text" />
+            <input id="mailInput" class="mailInputClass" type="text" />
+            <input id="confirmMailInput" class="confirmMailInputClass" type="text" />
+            <input id="systemInput" class="systemInputClass" type="text" />
+            <textarea id="descriptionInput" class="descriptionInputClass" rows="2" cols="20"></textarea>
+            <input id="supportSubmitBtn" class="supportBtnSubmitClass" type="submit" value="Senden" />
+        </div>
     </main>
 
     <footer>
