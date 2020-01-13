@@ -40,7 +40,9 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 900px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+				grid-template-columns: 100vw;
+				font-size: 12px;
             }
 
             main{
@@ -54,11 +56,9 @@
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
                 grid-template-areas: 
-                ". . ."
-                ". beispiel ."
-                ". . ."
-                ". beispiel ."
-                ". . .";  
+                "maingamepic . ."
+                ". . bicyclepic"
+                "article article article";
 
             }
 
@@ -73,7 +73,7 @@
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
                 <li class="produkte menüpunkt"><a href="#">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="#">News</a></li>
@@ -84,8 +84,38 @@
     </div>
 
     <main>
-        <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
-            dies ist wichtig für Screenreader und Suchmaschinen--> 
+ <img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
+		<img src="img/bicycle.png" grid-area="bicyclepic" class="Fahrrad">
+		
+		<article grid-area="article" class="Beschreibung">
+			<p><b><header class="title">Lorem ipsum.</header></b></p>
+			<center>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+				</center>
+		</article>
+		<style>
+			.Hauptspiel{
+				margin-left: -7vw;
+				margin-top: 1vw;
+				width: 60vw;
+			}
+			.Fahrrad{
+				margin-left: 30vw;
+				margin-top: 15vw;
+				width: 45vw;
+			}
+			.Beschreibung{
+				perspective-origin: bottom;
+				position: absolute;
+				padding: 40vw 16vw 5vh 16vw;
+				color: white;
+				
+				
+			}
+			.title{
+				padding-bottom: 5vw;
+			}
+		</style>
     </main>
 
     <footer>
