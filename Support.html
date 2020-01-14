@@ -232,15 +232,19 @@
             height: 40px;
         }
 
-        div .supportBtnSubmitClass:hover{
+        form .supportBtnSubmitClass:hover{
             box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
             transition: all ease 0.3s;
         }
 
-        div .supportBtnSubmitClass:active{
+        form .supportBtnSubmitClass:active{
             color: white;
             background-color: orange;
             box-shadow: orange 0px 5px 15px, inset rgba(0,0,0,0.15)0px -10px 20px;
+        }
+
+        form input:valid{
+            border-color: green;
         }
 
 
@@ -322,7 +326,9 @@
 
     <main>
         <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
-            dies ist wichtig für Screenreader und Suchmaschinen--> 
+        dies ist wichtig für Screenreader und Suchmaschinen
+        pattern="((strasse)|(str.))+\s\d"
+        -->
         <form class="supportDocument">
             <!--Aufzählung der Headlines-->
             <label class="firstNameHeadline">Vorname:</label>
@@ -336,10 +342,10 @@
             <!--Aufzählung der Inputs-->
             <input id="firstNameInput" class="firstNameInputClass" type="text" required>
             <input id="lastNameInput" class="lastNameInputClass" type="text" required>
-            <input id="streetInput" class="streetInputClass" type="text" required>
-            <input id="postCodeInput" class="postCodeInputClass" type="text" required>
+            <input id="streetInput" class="streetInputClass" type="text" pattern="\w*\W\s\d*\d" title="Strassenname + Hausnummer" required>
+            <input id="postCodeInput" class="postCodeInputClass" type="text" pattern="[\d]{5}" title="5 stellige Postleitzahl" required>
             <input id="cityInput" class="cityInputClass" type="text" required>
-            <input id="mailInput" class="mailInputClass" type="text" required>
+            <input id="mailInput" class="mailInputClass" required type="email" name="email">
             <input id="confirmMailInput" class="confirmMailInputClass" type="text" required>
             <input id="systemInput" class="systemInputClass" type="text" required>
             <textarea id="descriptionInput" class="descriptionInputClass" rows="2" cols="20"></textarea>
