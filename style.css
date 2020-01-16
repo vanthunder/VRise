@@ -1,8 +1,8 @@
 /* DOCUMENT INFORMATION
     - Document: 		VRise Main Stylesheet
-    - Version:  		0.1
+    - Version:  		0.9
     - Client:   		HSHL
-    - Author:   		Marc-A. Drolshagen  
+    - Author:   		Marc-A. Drolshagen, Marvin Schubert 
 */
 
 /* COLORS
@@ -18,8 +18,8 @@
 /* CSS DIRECTORY
     1. =GLOBAL SETTINGS
     2. =NAVIGATION
-    3. =SECTION2
-    4. =SECTION3
+    3. =FOOTER
+    4. =SCROLL ANIMATION
 */
 
 /* ===============
@@ -207,13 +207,6 @@ nav {
     }
 }
 
-/* ===============
-MAIN
-=============== */
-
-
-
-
 
 /* ===============
 FOOTER
@@ -395,6 +388,41 @@ footer a:hover {
         height: 30px;
         text-align: start;
     }
+}
+
+
+/* ===============
+SCROLL ANIMATION
+=============== */
+
+
+.animationLeft {
+    position: relative;
+    transform: translateX(-100vw);
+    opacity: 0;
+    transition: transform 0.5s .25s,
+                opacity 1s .25s;
+    will-change: left, opacity;
+}
+
+.animationLeft.is-visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.animationRight {
+    position: relative;
+    transform: translateX(100vw);
+    opacity: 0;
+    transition: transform 0.5s .25s,
+                opacity 1s .25s;
+    will-change: right, opacity;
+}
+
+.animationRight.is-visible {
+    transform: translateX(0);
+    opacity: 1;
+    
 }
 
 /* 

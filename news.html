@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Hier steht die Meta-Description.">  <!-- bitte Beschreibung anpassen-->
-    <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
+    <meta name="description" content="Alle Neuigkeiten rund um VRise.">  <!-- bitte Beschreibung anpassen-->
+    <title>VRise - News</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
 
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px calc(150vh-75px) 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px 150vh 200px;  /* Zeilenhöhe */
+            grid-template-columns: 100vw;
             background-color: #161834;
             grid-template-areas: 
                 "nav"
@@ -24,16 +25,18 @@
                 grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: 50vh 50vh 50vh;
+                grid-template-rows: repeat(3, 1fr);
                 grid-template-columns: 100vw;
                 /* grid-template-columns: 7vw repeat(12, 1fr) 7vw;  */
                 grid-column-gap: 0.7vw;
-                background-color: #161834;
+                align-items: center;
                 grid-template-areas: 
                 "newsSection1"
                 "newsSection2"
                 "newsSection3";  
             }
+
+       
 
         .newsSection:nth-of-type(even) {
             background-color: #25214F;
@@ -41,16 +44,29 @@
 
         .newsSection:nth-of-type(odd) {
             background-color: #161834;
-        }
+        } 
 
         .newsSection1 {
             grid-area: newsSection1;
+            height: calc(50vh-75px);
+            
         }
         .newsSection2 {
             grid-area: newsSection2;
+            
         }
         .newsSection3 {
             grid-area: newsSection3;
+            
+        }
+
+        .newsImage {
+            grid-area: image;
+            width: 100%;
+        }
+
+        .news {
+            grid-area: news;
         }
 
        
@@ -58,33 +74,48 @@
         
         /*DestopView*/
 		@media (min-width: 755px){
-           
+            .newsSection:nth-of-type(even) {
+            grid-template-areas: 
+            ". . . . . . . . . . . . . ."
+            ". . news news news news . image image image image image . ."
+            ". . . . . . . . . . . . . .";
+            }
+
+            .newsSection:nth-of-type(odd) {
+                grid-template-areas: 
+                ". . . . . . . . . . . . . ."
+                ". . image image image image image . news news news news . ."
+                ". . . . . . . . . . . . . .";
+            } 
+
+            .newsSection {
+                height: 50vh;
+                display: grid;
+                grid-template-columns: 7vw repeat(12, 1fr) 7vw;
+                grid-column-gap: 0.7vw;
+                grid-template-rows: repeat(3, 1fr);
+            }
+
         }
 
         /* MOBILE VIEW */
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px calc(150vh-75px) 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 225vh 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
-            main{
-                grid-area: main;
-                display: grid;
-                width: 100%;
-                grid-template-rows: calc(50-75px) 50vh 50vh;
-                /* grid-template-columns: 7vw 86vw 7vw;  */
-                grid-column-gap: 0.7vw;
-                background-color: #161834;
-                /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
-                Rand Content Rand */
-                grid-template-areas: 
-                ". . ."
-                ". beispiel ."
-                ". . ."
-                ". beispiel ."
-                ". . .";  
-
+            .newsSection {
+            height: 75vh;
+            display: grid;
+            grid-template-columns: 7vw 1fr 7vw;
+            grid-column-gap: 0.7vw;
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas: 
+            ". . ."
+            ". image ."
+            ". news ."
+            ". . .";
             }
 
         }
@@ -94,7 +125,7 @@
     <script src="startAnimation.js"></script>
 </head>
 
-<body onresize="resize()">
+<body onresize="resize()"  onload="prepareAnimation()">
     <div class="navWrapper">
         <nav>
             <ul>
@@ -110,8 +141,8 @@
 
     <main>
        <section class="newsSection1 newsSection">
-           <img class="newsImage1" src="" alt="">
-           <div class="news1">
+           <img class="newsImage1 newsImage show-on-scroll animationLeft" src="img/punching@2x.png" alt="Boxen">
+           <div class="news1 news show-on-scroll animationRight">
                <h1>Jetzt neu: Kampfsport-DLC</h1>
                <p>
                     5 neue Sportarten versprechen jede Menge Action!
@@ -120,8 +151,8 @@
            </div>
        </section>
        <section class="newsSection2 newsSection">
-        <img class="newsImage2" src="" alt="">
-        <div class="news2">
+        <img class="newsImage2 newsImage show-on-scroll animationRight" src="img/sports-team.png" alt="Fußsballteam">
+        <div class="news2 news show-on-scroll animationLeft">
             <h1>Neuer Multiplayer</h1>
             <p>
                 Spielen Sie jetzt mit bis zu 21 Spielern gleichzeitig und bilden Sie Trainingsgruppen mit Ihren Freunden.
@@ -130,8 +161,8 @@
         </div>
     </section>
     <section class="newsSection3 newsSection">
-        <img class="newsImage3" src="" alt="">
-        <div class="news3">
+        <img class="newsImage3 newsImage show-on-scroll animationLeft" src="img/viveport-logo@2x.png" alt="Viveport Logo">
+        <div class="news3 news show-on-scroll animationRight">
             <h1>VRise ist jetzt bei Viveport enthalten</h1>
             <p>
                 Bist du Besitzer einer HTC Vive solltest du über ein Viveport Abonnement nachdenken, denn VRise ist dort jetzt enthalten.
@@ -180,6 +211,6 @@
             <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
         </div>
   </footer>	
-
+  <script src="showOnScroll.js"></script>
 </body>
 </html>

@@ -8,6 +8,7 @@
     <title>VRise</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="startAnimation.css">
+    <link rel="stylesheet" href="scrollAnimation.css">
     <style>
 
         body {
@@ -180,35 +181,6 @@
 
         }
 
-        .animationLeft {
-            position: relative;
-            transform: translateX(-100vw);
-            opacity: 0;
-            transition: transform 0.5s .25s,
-                        opacity 1s .25s;
-            will-change: left, opacity;
-        }
-
-        .animationLeft.is-visible {
-            transform: translateX(0);
-            opacity: 1;
-        }
-
-        .animationRight {
-            position: relative;
-            transform: translateX(100vw);
-            opacity: 0;
-            transition: transform 0.5s .25s,
-                        opacity 1s .25s;
-            will-change: right, opacity;
-        }
-
-        .animationRight.is-visible {
-            transform: translateX(0);
-            opacity: 1;
-            
-        }
-
        
     </style>
     <script src="navResponsive.js"></script>
@@ -216,7 +188,7 @@
     
 </head>
 
-<body onresize="resize()" onload="prepareAnimation();">
+<body onresize="resize()" onload="prepareAnimation()">
     <div id="startAnimation">
         <img id="startAnimationLogo" src="img/logo.png" alt="">
         <h1>VRise</h1>
