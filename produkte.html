@@ -91,19 +91,22 @@
     <header>
 <a href="hauptprodukt.html"<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
 				<article class="maintitle" grid-area="Haupttitel">
-			HAUPTSPIEL
+			Hauptspiel
 		</article></div></a>
 		<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
-				<article class="dlctitle" grid-area="DLCtitel">
+			<article class="dlctitle" grid-area="DLCtitel">
 			DLCs
 		</div></article>
+	
 
 		<style>
 		.Hauptspiel{
-			position: relative;
+			position: fixed;
 			transform: rotate(5deg);
 			margin-top: -2vw;
 			width: 56vw;
+			transform: scale(0.8);
+			will-change: transform;
 			
 		}
 		.BallDLC{
@@ -111,16 +114,19 @@
 			transform: rotate(5deg);
 			margin-left: 30vw;
 			width: 52vw;
-			animation-name: dlc;
+			transform: scale(0.8);
+
+
 			
 		}
 			.maintitle{
 				position: absolute;
 				font-weight: bold;
-				margin-top: -28vw;
-				margin-left: 30vw;
+				margin-left: 33vw;
+				margin-top: 8vw;
 				color: white;
-				font-size: 3vw;			
+				font-size: 2vw;	
+				
 			}
 			.dlctitle{
 				position: absolute;
@@ -129,31 +135,16 @@
 				margin-left: 66vw;
 				color: white;
 				font-size: 3vw;	
-				animation-name: dlc;
 			}
+			
 			.mainanimation:hover{
-				animation-name: main;
-				animation-duration: 6s;
-				transition-delay: 0s;
-				transition-timing-function: linear;
-				transition-duration: 2s;
+				transform: scale(1.15);
+				
 			}
-			@keyframes main{
-				0%{margin-left: 0vw;margin-top: 0vw;}
-				50%{margin-left: 8vw;margin-top: -4vw;}
-				50%{margin-left: 6vw;margin-top: -3vw;}
-			}
+
 			.dlcanimation:hover{
-				animation-name: dlc;
-				animation-duration: 6s;
-				transition-delay: 0s;
-				transition-timing-function: linear;
-				transition-duration: 2s;
-			}
-			@keyframes dlc{
-				0%{margin-left: 0vw;margin-top: 0vw;}
-				50%{margin-left: 8vw;margin-top: -4vw;}
-				100%{margin-left: 6vw;margin-top: -2vw;}
+				transform: scale(1.15);
+
 			}
 
 			
