@@ -22,8 +22,8 @@
     4. =SCROLL ANIMATION
 */
 
-/* TODO: Button hover []
-   TODO: Buttons similiar []
+/* 
+   TODO: Buttons similiar - glow effects or flat color effect? [] same for input fields
 */
 
 /* ===============
@@ -50,7 +50,27 @@ button {
     text-align: center;
     border: none;
     background-color: white;
+    transition: 0.5s;
 }
+
+button:hover {
+    background-color: #ff8400;
+    cursor: pointer;
+}
+
+/* input[type="button"] {
+    border-radius: 10px;
+    padding: 8px 12px;
+    text-align: center;
+    border: none;
+    background-color: white;
+    transition: 0.5s;
+} */
+
+input[type="button"]:hover {
+    background-color: #ff8400;
+    cursor: pointer;
+} 
 
 main h1 {
     font-size: 20pt;
@@ -109,6 +129,7 @@ nav {
     nav a {
         text-decoration: none;
         color: #161834;
+        transition: 0.1s;
     }
 
         nav a:hover {

@@ -8,7 +8,7 @@
                 document.getElementsByTagName("footer")[0].setAttribute("style", "display: none");
                 document.getElementsByClassName("navWrapper")[0].setAttribute("style", "display: none");
                 document.getElementsByTagName("body")[0].setAttribute("style", "width: 100vw; height: 100vh;");
-                timeoutID = window.setTimeout(animationEnd, 4000);
+                timeoutID = window.setTimeout(animationEnd, 2500);
             }
             else {
                 document.getElementById("startAnimation").setAttribute("style", "display: none");
