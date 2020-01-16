@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Hier steht die Meta-Description.">  <!-- bitte Beschreibung anpassen-->
-    <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
+    <title>VRise - Support</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
 
@@ -29,8 +29,10 @@
             grid-template-areas: 
             ". . . . . . . . . . . ." 
             ". . . . . . supportDocument . . . . ."
+            
         }
 
+        
         .supportDocument{
             grid-area: supportDocument;
             border-radius: 70px;
@@ -230,15 +232,19 @@
             height: 40px;
         }
 
-        div .supportBtnSubmitClass:hover{
+        form .supportBtnSubmitClass:hover{
             box-shadow: rgba(0,0,0,0.7) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
             transition: all ease 0.3s;
         }
 
-        div .supportBtnSubmitClass:active{
+        form .supportBtnSubmitClass:active{
             color: white;
             background-color: orange;
             box-shadow: orange 0px 5px 15px, inset rgba(0,0,0,0.15)0px -10px 20px;
+        }
+
+        form input:valid{
+            border-color: green;
         }
 
 
@@ -308,7 +314,7 @@
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
                 <li class="produkte menüpunkt"><a href="#">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="#">News</a></li>
@@ -320,29 +326,31 @@
 
     <main>
         <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
-            dies ist wichtig für Screenreader und Suchmaschinen--> 
-        <div class="supportDocument">
+        dies ist wichtig für Screenreader und Suchmaschinen
+        pattern="((strasse)|(str.))+\s\d"
+        -->
+        <form class="supportDocument">
             <!--Aufzählung der Headlines-->
-            <div class="firstNameHeadline">Vorname:</div>
-            <div class="lastNameHeadline">Nachname:</div>
-            <div class="streetHeadline">Straße:</div>
-            <div class="postCodeHeadline">Postleitzahl:</div>
-            <div class="cityHeadline">Stadt:</div>
-            <div class="mailHeadline">Email:</div>
-            <div class="confirmMailHeadline">Bestätige Email:</div>
-            <div class="systemHeadline">System:</div>
+            <label class="firstNameHeadline">Vorname:</label>
+            <label class="lastNameHeadline">Nachname:</label>
+            <label class="streetHeadline">Adresse:</label>
+            <label class="postCodeHeadline">Postleitzahl:</label>
+            <label class="cityHeadline">Stadt:</label>
+            <label class="mailHeadline">Email:</label>
+            <label class="confirmMailHeadline">Bestätige&nbsp;Email:</label>
+            <label class="systemHeadline">System:</label>
             <!--Aufzählung der Inputs-->
-            <input id="firstNameInput" class="firstNameInputClass" type="text" />
-            <input id="lastNameInput" class="lastNameInputClass" type="text" />
-            <input id="streetInput" class="streetInputClass" type="text" />
-            <input id="postCodeInput" class="postCodeInputClass" type="text" />
-            <input id="cityInput" class="cityInputClass" type="text" />
-            <input id="mailInput" class="mailInputClass" type="text" />
-            <input id="confirmMailInput" class="confirmMailInputClass" type="text" />
-            <input id="systemInput" class="systemInputClass" type="text" />
+            <input id="firstNameInput" class="firstNameInputClass" type="text" required>
+            <input id="lastNameInput" class="lastNameInputClass" type="text" required>
+            <input id="streetInput" class="streetInputClass" type="text" pattern="\w*\W\s\d*\d" title="Strassenname + Hausnummer" required>
+            <input id="postCodeInput" class="postCodeInputClass" type="text" pattern="[\d]{5}" title="5 stellige Postleitzahl" required>
+            <input id="cityInput" class="cityInputClass" type="text" required>
+            <input id="mailInput" class="mailInputClass" required type="email" name="email">
+            <input id="confirmMailInput" class="confirmMailInputClass" type="text" required>
+            <input id="systemInput" class="systemInputClass" type="text" required>
             <textarea id="descriptionInput" class="descriptionInputClass" rows="2" cols="20"></textarea>
-            <input id="supportSubmitBtn" class="supportBtnSubmitClass" type="submit" value="Senden" />
-        </div>
+            <button id="supportSubmitBtn" class="supportBtnSubmitClass" type="submit">Senden</button>
+        </form>
     </main>
 
     <footer>

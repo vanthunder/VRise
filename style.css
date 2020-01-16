@@ -49,9 +49,10 @@ button {
 }
 
 main h1 {
-    font-size: 22pt;
+    font-size: 20pt;
     color: white;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-weight: 800;
 }
 
 p {
