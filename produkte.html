@@ -17,21 +17,77 @@
             background-color: #161834;
             grid-template-areas: 
                 "nav"
-                "header"
+                "main"
                 "footer";
         }
 
-        header {
+        main {
             /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
             /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
             background-size: cover; */
-            grid-area: header;
+            grid-area: main;
         }
+
+        .Hauptspiel{
+			position: fixed;
+			transform: rotate(5deg);
+			margin-top: -2vw;
+			width: 56vw;
+			transform: scale(0.8);
+			cursor: pointer;
+        }
+        
+		.BallDLC{
+			position: relative;
+			transform: rotate(5deg);
+			margin-left: 30vw;
+			width: 52vw;
+            transform: scale(0.8);
+            cursor: pointer;
+		}
+        
+        .maintitle{
+				position: absolute;
+				font-weight: bold;
+				margin-left: 33vw;
+				margin-top: 8vw;
+				color: white;
+                font-size: 2vw;
+        }
+        
+		.dlctitle{
+			position: absolute;
+			font-weight: bold;
+			margin-top: -15vw;
+			margin-left: 66vw;
+			color: white;
+            font-size: 2vw;	
+        }
+            
+        .mainanimation {
+            transition: 1s;
+            transform: scale(0.9);
+        }
+
+        .dlcanimation {
+			transition: 1s;
+            transform: scale(0.9);
+		}
+			
+		.mainanimation:hover{
+			transform: scale(1);
+				
+		}
+
+		.dlcanimation:hover{
+			transform: scale(1);
+
+		}
         
         /*DestopView*/
 		@media (min-width: 755px){
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(2, 1fr);
@@ -47,13 +103,13 @@
 
         /* MOBILE VIEW */
         @media (max-width: 754px){
-            header {
+            body {
                 width: 100%;
-                grid-template-rows: 75px calc(100vh - 75px) 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 300px 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(2, 1fr);
@@ -62,10 +118,7 @@
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
-                grid-template-areas: 
-                "maingamepic Haupttitel ."
-				". . balldlcpic"; 
-            }			
+            }
         }
 
        
@@ -88,7 +141,7 @@
         </nav>
     </div>
 
-    <header>
+    <main>
 <a href="hauptprodukt.html"<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
 				<article class="maintitle" grid-area="Haupttitel">
 			Hauptspiel
@@ -98,69 +151,7 @@
 			DLCs
 		</div></article>
 	
-
-		<style>
-		.Hauptspiel{
-			position: fixed;
-			transform: rotate(5deg);
-			margin-top: -2vw;
-			width: 56vw;
-			transform: scale(0.8);
-			cursor: pointer;
-        }
-        
-		.BallDLC{
-			position: relative;
-			transform: rotate(5deg);
-			margin-left: 30vw;
-			width: 52vw;
-            transform: scale(0.8);
-            cursor: pointer;
-		}
-			.maintitle{
-				position: absolute;
-				font-weight: bold;
-				margin-left: 33vw;
-				margin-top: 8vw;
-				color: white;
-                font-size: 2vw;	
-				
-			}
-			.dlctitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: -15vw;
-				margin-left: 66vw;
-				color: white;
-                font-size: 2vw;	
-            }
-            
-            .mainanimation {
-                transition: 1s;
-            }
-
-            .dlcanimation{
-				transition: 1s;
-
-			}
-			
-			.mainanimation:hover{
-				transform: scale(1.05);
-				
-			}
-
-			.dlcanimation:hover{
-				transform: scale(1.05);
-
-			}
-
-			
-		</style>
-    </header> 
-
-    <main>
-		
-    </main>
+    </main> 
 
     <footer>
         <!-- Aufzählung der Footer Links -->
