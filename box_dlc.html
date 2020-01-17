@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="DLC-Übersicht">   <!-- bitte Beschreibung anpassen-->
+    <meta name="description" content="Box-DLC">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,8 +12,7 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px calc(100vh - 275px) 200px;  /* Zeilenhöhe */
-			grid-template-columns: 100vw;
+            grid-template-rows: 75px 1600px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
@@ -21,70 +20,7 @@
                 "footer";
         }
 
-        main {
-            /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
-            /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
-            background-size: cover; */
-            grid-area: main;
-        }
-
-        .boxer{
-			position: fixed;
-			margin-left: 8vw;
-			margin-top: -2vw;
-			width: 64vw;
-			transform: scale(0.8);
-			transform: rotate(-3deg);
-			cursor: pointer;
-        }
         
-		.BallDLC{
-			position: relative;
-			margin-left: 34vw;
-			width: 55vw;
-            transform: scale(0.8);
-			transform: rotate(3deg);
-            cursor: pointer;
-		}
-        
-        .dlc1title{
-				position: absolute;
-				font-weight: bold;
-				margin-left: 54vw;
-				margin-top: 5vw;
-				color: white;
-                font-size: 2vw;
-				width: 20vw;
-        }
-        
-		.dlc2title{
-			position: absolute;
-			font-weight: bold;
-			margin-top: -12vw;
-			margin-left: 68vw;
-			color: white;
-            font-size: 2vw;	
-        }
-            
-        .mainanimation {
-            transition: 1s;
-            transform: scale(0.9);
-        }
-
-        .dlcanimation {
-			transition: 1s;
-            transform: scale(0.9);
-		}
-			
-		.mainanimation:hover{
-			transform: scale(1);
-				
-		}
-
-		.dlcanimation:hover{
-			transform: scale(1);
-
-		}
         
         /*DestopView*/
 		@media (min-width: 755px){
@@ -92,14 +28,11 @@
                 grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
                 grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
                 grid-template-rows: 75px;
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
-				grid-template-areas: 
-                ". . boxer"
-				"balldlcpic . .";  
             }
         }
 
@@ -107,22 +40,27 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 300px 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
             main{
                 grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(15, 1fr);
                 grid-template-columns: 7vw 86vw 7vw; 
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
-            }
-        }
+                grid-template-areas: 
+                "vrpunch . ."
+                ". punching ."
+                ". article .";  
 
+            }
+
+        }
        
     </style>
     <script src="navResponsive.js"></script>
@@ -133,7 +71,7 @@
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
                 <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="news.html">News</a></li>
@@ -143,17 +81,52 @@
         </nav>
     </div>
 
-    <main>
-<a href="box_dlc.html"<div class="mainanimation"><img src="img/punching.png" grid-area="boxer" class="boxer">
-				<article class="dlc1title" grid-area="Haupttitel">
-			Box-DLC
-		</article></div></a>
-		<a href="ball_dlc.html"<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
-			<article class="dlc2title" grid-area="DLC2titel">
-			Ballsport-DLC
-	</article></div></a>
-	
-    </main> 
+     <main>
+ <img src="img/vr_punching.png" grid-area="vrpunch" class="vrpunch">
+		<img src="img/punching.png" grid-area="punching" class="punching">
+		
+		<article grid-area="article" class="Beschreibung">
+			<p><b><h1>Lorem ipsum.</h1></b></p>
+				<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+				<a href="www.steam.com/"><button class="steambutton" ti> Bei <img class="steamlogo" src="img/steam-header_logo.png"> erhältlich </button></p></a>
+				
+		</article>
+		<style>
+			.vrpunch{
+				margin-left: -7vw;
+				margin-top: 1vw;
+				width: 50vw;
+			}
+			.punching{
+				margin-left: 40vw;
+				margin-top: 15vw;
+				width: 50vw;
+			}
+			.Beschreibung{
+				perspective-origin: bottom;
+				position: absolute;
+				padding: 40vw 16vw 5vh 16vw;
+				color: white;
+				
+			}
+			.steamlogo{
+				width: 8vw;
+				
+				
+			}
+			.steambutton{
+				background-color: #0FFF71;
+				width: 20vw;
+				height: auto;
+				margin: 20px;
+				font-size: 20pt;			
+				border-radius: 10px;
+				margin: 5%;
+			}
+			
+		</style>
+    </main>
+
 
     <footer>
         <!-- Aufzählung der Footer Links -->
