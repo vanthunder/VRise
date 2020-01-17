@@ -12,7 +12,7 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px 1200px 200px;  /* Zeilenhöhe */
+            grid-template-rows: 75px 1300px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
@@ -54,11 +54,7 @@
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
-                grid-template-areas: 
-                "maingamepic . ."
-                ". . bicyclepic"
-                "article article article";
-
+               
             }
 
         }
@@ -83,8 +79,8 @@
     </div>
 
     <main>
- <img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
-		<img src="img/bicycle.png" grid-area="bicyclepic" class="Fahrrad">
+ <img src="img/viveport-logo@2x.png" class="viveport">
+		<img src="img/htc_vive_mirrored.png" class="vive">
 		
 		<article grid-area="article" class="Beschreibung">
 			<p><b><h1 class="title">Lorem ipsum.</h1></b></p>
@@ -93,15 +89,16 @@
 				
 		</article>
 		<style>
-			.Hauptspiel{
+			.viveport {
 				margin-left: -7vw;
 				margin-top: 1vw;
-				width: 60vw;
+                width: 60vw;
 			}
-			.Fahrrad{
+			.vive {
 				margin-left: 30vw;
 				margin-top: 15vw;
-				width: 45vw;
+                width: 45vw;
+                rotate: -30deg;
 			}
 			.Beschreibung{
 				perspective-origin: bottom;
