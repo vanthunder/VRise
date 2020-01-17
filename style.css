@@ -110,10 +110,23 @@ main a:hover {
     color: #ff8400;
 }
 
+@media (min-width: 755px){
+    p {
+        font-size: 15pt;
+        color: white;
+    }
+}
 
-p {
-    font-size: 15pt;
-    color: white;
+
+@media (max-width: 754px){
+    p {
+        font-size: 12px;
+        color: white;
+    }
+
+    main h1 {
+        font-size: 15px;
+    }
 }
 
 h1 {
