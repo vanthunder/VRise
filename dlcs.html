@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Unser Produkt">  <!-- bitte Beschreibung anpassen-->
+    <meta name="description" content="Unsere DLC's">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -40,9 +40,7 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 900px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
-				grid-template-columns: 100vw;
-				font-size: 12px;
+                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
             main{
@@ -56,9 +54,9 @@
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
                 grid-template-areas: 
-                "maingamepic . ."
-                ". . bicyclepic"
-                "article article article";
+                "ballgame . ."
+                ". punching ."
+                ". article .";  
 
             }
 
@@ -73,7 +71,7 @@
     <div class="navWrapper">
         <nav>
             <ul>
-                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="logoHomeButton"><a href="#"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
                 <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
                 <li class="news menüpunkt"><a href="news.html">News</a></li>
@@ -83,9 +81,9 @@
         </nav>
     </div>
 
-    <main>
- <img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
-		<img src="img/bicycle.png" grid-area="bicyclepic" class="Fahrrad">
+     <main>
+ <img src="img/ballgame.png" grid-area="ballgame" class="ballgame">
+		<img src="img/punching.png" grid-area="punching" class="punching">
 		
 		<article grid-area="article" class="Beschreibung">
 			<p><b><header class="title">Lorem ipsum.</header></b></p>
@@ -96,15 +94,15 @@
 				</center>
 		</article>
 		<style>
-			.Hauptspiel{
+			.ballgame{
 				margin-left: -7vw;
 				margin-top: 1vw;
-				width: 60vw;
-			}
-			.Fahrrad{
-				margin-left: 30vw;
-				margin-top: 15vw;
 				width: 45vw;
+			}
+			.punching{
+				margin-left: 40vw;
+				margin-top: 15vw;
+				width: 50vw;
 			}
 			.Beschreibung{
 				perspective-origin: bottom;
@@ -133,6 +131,7 @@
 			
 		</style>
     </main>
+
 
     <footer>
         <!-- Aufzählung der Footer Links -->
