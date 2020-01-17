@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Hier steht die Meta-Description.">   <!-- bitte Beschreibung anpassen-->
+    <meta name="description" content="Unser Produkt">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
     <link rel="stylesheet" href="style.css">
     <style>
@@ -12,62 +12,57 @@
         body {
             display: grid;
             width: 100%;
-            grid-template-rows: 75px calc(100vh - 275px) 200px;  /* Zeilenhöhe */
-			grid-template-columns: 100vw;
+            grid-template-rows: 75px 1600px 200px;  /* Zeilenhöhe */
             background-color: #161834;
             grid-template-areas: 
                 "nav"
-                "header"
+                "main"
                 "footer";
         }
 
-        header {
-            /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
-            /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
-            background-size: cover; */
-            grid-area: header;
-        }
+        
         
         /*DestopView*/
 		@media (min-width: 755px){
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 1fr);
                 grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
                 grid-template-rows: 75px;
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
-				grid-template-areas: 
-                ". . maingamepic"
-				"balldlcpic . .";  
             }
         }
 
         /* MOBILE VIEW */
         @media (max-width: 754px){
-            header {
+            body {
                 width: 100%;
-                grid-template-rows: 75px calc(100vh - 75px) 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 900px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+				grid-template-columns: 100vw;
+				font-size: 12px;
             }
 
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
-                grid-template-rows: repeat(2, 1fr);
+                grid-template-rows: repeat(15, 1fr);
                 grid-template-columns: 7vw 86vw 7vw; 
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
                 grid-template-areas: 
-                "maingamepic Haupttitel ."
-				". . balldlcpic"; 
-            }			
-        }
+                "maingamepic . ."
+                ". . bicyclepic"
+                "article article article";
 
+            }
+
+        }
        
     </style>
     <script src="navResponsive.js"></script>
@@ -88,71 +83,55 @@
         </nav>
     </div>
 
-    <header>
-<a href="hauptprodukt.html"<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
-				<article class="maintitle" grid-area="Haupttitel">
-			Hauptspiel
-		</article></div></a>
-		<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
-			<article class="dlctitle" grid-area="DLCtitel">
-			DLCs
-		</div></article>
-	
-
+    <main>
+ <img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
+		<img src="img/bicycle.png" grid-area="bicyclepic" class="Fahrrad">
+		
+		<article grid-area="article" class="Beschreibung">
+			<p><b><header class="title">Lorem ipsum.</header></b></p>
+			<center>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.
+				<a href="www.steam.com/"><p><button class="steambutton" ti> Bei <img class="steamlogo" src="img/steam-header_logo.png"> erhältlich </button></p></a>
+				
+				</center>
+		</article>
 		<style>
-		.Hauptspiel{
-			position: fixed;
-			transform: rotate(5deg);
-			margin-top: -2vw;
-			width: 56vw;
-			transform: scale(0.8);
-			will-change: transform;
-			
-		}
-		.BallDLC{
-			position: relative;
-			transform: rotate(5deg);
-			margin-left: 30vw;
-			width: 52vw;
-			transform: scale(0.8);
-
-
-			
-		}
-			.maintitle{
+			.Hauptspiel{
+				margin-left: -7vw;
+				margin-top: 1vw;
+				width: 60vw;
+			}
+			.Fahrrad{
+				margin-left: 30vw;
+				margin-top: 15vw;
+				width: 45vw;
+			}
+			.Beschreibung{
+				perspective-origin: bottom;
 				position: absolute;
-				font-weight: bold;
-				margin-left: 33vw;
-				margin-top: 8vw;
+				padding: 40vw 16vw 5vh 16vw;
 				color: white;
-				font-size: 2vw;	
 				
 			}
-			.dlctitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: -15vw;
-				margin-left: 66vw;
-				color: white;
-				font-size: 3vw;	
+			.title{
+				padding-bottom: 5vw;
 			}
-			
-			.mainanimation:hover{
-				transform: scale(1.15);
+			.steamlogo{
+				height: 22px;
+				
 				
 			}
-
-			.dlcanimation:hover{
-				transform: scale(1.15);
-
+			.steambutton{
+				background-color: #0FFF71;
+				width: auto;
+				height: auto;
+				margin: 20px;
+				font-size: 20pt;			
+				border-radius: 10px;
+				margin: 5%;
 			}
-
 			
 		</style>
-    </header> 
-
-    <main>
-		
     </main>
 
     <footer>
