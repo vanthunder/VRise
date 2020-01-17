@@ -40,7 +40,7 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 900px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 1100px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
 				grid-template-columns: 100vw;
             }
 
@@ -61,7 +61,6 @@
        
     </style>
     <script src="navResponsive.js"></script>
-    <script src="startAnimation.js"></script>
 </head>
 
 <body onresize="resize()">
@@ -79,11 +78,11 @@
     </div>
 
     <main>
- <img src="img/viveport-logo@2x.png" class="viveport">
-		<img src="img/htc_vive_mirrored.png" class="vive">
+ <img src="img/viveport-logo@2x.png" class="viveport show-on-scroll animationLeft">
+		<img src="img/htc_vive_mirrored.png" class="vive show-on-scroll animationRight">
 		
 		<article grid-area="article" class="Beschreibung">
-			<p><b><h1 class="title">Lorem ipsum.</h1></b></p>
+			<h1 class="title">Lorem ipsum.</h1>
 			<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem.</p>
 				<a href="www.steam.com/"><p><button class="steambutton" ti> Bei <img class="steamlogo" src="img/steam-header_logo.png"> erhältlich </button></p></a>
 				
@@ -93,13 +92,15 @@
 				margin-left: -7vw;
 				margin-top: 1vw;
                 width: 60vw;
-			}
+            }
+            
 			.vive {
 				margin-left: 30vw;
 				margin-top: 15vw;
                 width: 45vw;
                 rotate: -30deg;
-			}
+            }
+            
 			.Beschreibung{
 				perspective-origin: bottom;
 				position: absolute;
@@ -110,9 +111,8 @@
 			
 			.steamlogo{
 				height: 22px;
-				
-				
-			}
+            }
+            
 			.steambutton{
 				background-color: #0FFF71;
 				width: auto;
@@ -165,6 +165,6 @@
             <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
         </div>
   </footer>	
-
+  <script src="showOnScroll.js"></script>
 </body>
 </html>
