@@ -17,21 +17,79 @@
             background-color: #161834;
             grid-template-areas: 
                 "nav"
-                "header"
+                "main"
                 "footer";
         }
 
-        header {
+        main {
             /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
             /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
             background-size: cover; */
-            grid-area: header;
+            grid-area: main;
         }
+
+        .Hauptspiel{
+			position: fixed;
+			transform: rotate(2deg);
+			margin-left: 5vw;
+			margin-top: -7vw;
+			width: 65vw;
+			transform: scale(0.8);
+			cursor: pointer;
+        }
+        
+		.BallDLC{
+			position: relative;
+			transform: rotate(-3deg);
+			margin-left: 28vw;
+			margin-top: -4vw;
+			width: 62vw;
+            transform: scale(0.8);
+            cursor: pointer;
+		}
+        
+        .maintitle{
+				position: absolute;
+				font-weight: bold;
+				margin-left: 38vw;
+				margin-top: 8vw;
+				color: white;
+                font-size: 2vw;
+        }
+        
+		.dlctitle{
+			position: absolute;
+			font-weight: bold;
+			margin-top: -16vw;
+			margin-left: 68vw;
+			color: white;
+            font-size: 2vw;	
+        }
+            
+        .mainanimation {
+            transition: 1s;
+            transform: scale(0.9);
+        }
+
+        .dlcanimation {
+			transition: 1s;
+            transform: scale(0.9);
+		}
+			
+		.mainanimation:hover{
+			transform: scale(1);
+				
+		}
+
+		.dlcanimation:hover{
+			transform: scale(1);
+
+		}
         
         /*DestopView*/
 		@media (min-width: 755px){
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(2, 1fr);
@@ -49,11 +107,11 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px calc(100vh - 75px) 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 300px 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
-            header{
-                grid-area: header;
+            main{
+                grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(2, 1fr);
@@ -62,12 +120,7 @@
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
-                grid-template-areas: 
-                "maingamepic Haupttitel ."
-				". . balldlcpic"; 
-
-            }			
-
+            }
         }
 
        
@@ -83,76 +136,24 @@
                 <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
                 <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
                 <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
-                <li class="news menüpunkt"><a href="#">News</a></li>
+                <li class="news menüpunkt"><a href="news.html">News</a></li>
                 <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li> <!-- nav ausklapp-button -->
                 <li class="background"><div></div></li> <!-- Hintergrund für die Navbar -->
             </ul>
         </nav>
     </div>
 
-    <header>
-<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
-				<article class="maintitle" grid-area="Haupttitel">
-			HAUPTSPIEL
-	</article></div>
-		<img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
-				<article class="dlctitle" grid-area="DLCtitel">
-			DLCs
-		</div></article>
-
-		<style>
-		.Hauptspiel{
-			position: relative;
-			transform: rotate(5deg);
-			margin-bottom: 10vw;
-			width: 56vw;
-			
-		}
-		.BallDLC{
-			position: relative;
-			transform: rotate(5deg);
-			margin-left: 30vw;
-			width: 52vw;
-			animation-name: dlc;
-			
-		}
-			.maintitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: -38vw;
-				margin-left: 30vw;
-				color: white;
-				font-size: 3vw;			
-			}
-			.dlctitle{
-				position: absolute;
-				font-weight: bold;
-				margin-top: 25vw;
-				margin-left: 76vw;
-				color: white;
-				font-size: 3vw;	
-				animation-name: dlc;
-			}
-			.mainanimation:hover{
-				animation-name: main;
-				animation-duration: 4s;
-				transition-delay: 0s;
-				transition-timing-function: ease-in-out;
-				transition-duration: 4s;
-			}
-			@keyframes main{
-				0%{margin-left: 0vw;margin-topp: 0vw;}
-				50%{margin-left: 8vw;margin-top: -4vw;}
-				50%{margin-left: 6vw;margin-top: -3vw;}
-			}
-
-			
-		</style>
-    </header> 
-
     <main>
-		
-    </main>
+<a href="hauptprodukt.html"<div class="mainanimation"><img src="img/maingame.png" grid-area="maingamepic" class="Hauptspiel">
+				<article class="maintitle" grid-area="Haupttitel">
+			Hauptspiel
+		</article></div></a>
+		<a href="dlcs.html"<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
+			<article class="dlctitle" grid-area="DLCtitel">
+			DLCs
+	</article></div></a>
+	
+    </main> 
 
     <footer>
         <!-- Aufzählung der Footer Links -->

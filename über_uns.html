@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Lerne die VRise GmbH kennen.">  <!-- bitte Beschreibung anpassen-->
+    <title>VRise - Über uns</title> <!-- bitte Titel anpassen-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 75px 1300px 200px;  /* Zeilenhöhe */
+            background-color: #161834;
+            grid-template-areas: 
+                "nav"
+                "main"
+                "footer";
+        }
+
+        
+        
+        /*DestopView*/
+		@media (min-width: 755px){
+            main{
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(4, 1fr);
+                grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+                grid-template-rows: 75px;
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+            }
+        }
+
+        /* MOBILE VIEW */
+        @media (max-width: 754px){
+            body {
+                width: 100%;
+                grid-template-rows: 75px 1100px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+				grid-template-columns: 100vw;
+            }
+
+            main{
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(15, 1fr);
+                grid-template-columns: 7vw 86vw 7vw; 
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+                /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
+                Rand Content Rand */
+               
+            }
+
+        }
+       
+    </style>
+    <script src="navResponsive.js"></script>
+</head>
+
+<body onresize="resize()">
+    <div class="navWrapper">
+        <nav>
+            <ul>
+                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
+                <li class="zubehör menüpunkt"><a href="zubehör.html">Zubehör</a></li>
+                <li class="news menüpunkt"><a href="news.html">News</a></li>
+                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li> <!-- nav ausklapp-button -->
+                <li class="background"><div></div></li> <!-- Hintergrund für die Navbar -->
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+ <img src="img/vrise_logo_dreieckrahmen@2x.png" class="viveport show-on-scroll animationLeft">
+		<img src="img/htc_vive_mirrored.png" class="vive show-on-scroll animationRight">
+		
+		<article grid-area="article" class="Beschreibung">
+            <h1>Über Uns</h1>
+            <h2>Woher kommt das Unternehmen?</h2>
+            <p> Unsere Firma wurde 2016 in Köln gegründet. Unsere Idee hat über die Crowdfunding Plattform Indiegogo viele Menschen erreicht 
+                und begeistert. Dann wurden die Veranstalter der VR Expo auf uns aufmerksam und haben uns eingeladen. Dort stellten wir unser Konzept
+                 und einen aller ersten Prototypen unseres Programms vor. Da wurde dann NVIDIA auf uns aufmerksam und hat großzügig in unser Unternehmen 
+                 investiert. Dadurch war es uns möglich ein großes Team auf die Beine zu stellen, um unsere Vision zu verwirklichen. 
+            
+            <h2>Wer arbeitet im Unternehmen? </h2> 
+            <p> Unser Entwicklerteam besteht aus internationalen Experten verschiedenster Fachrichtungen. 3D Artists, Game Designer, 
+                Programmierer, Sportwissenschaftler und Profisportler sind in unserem Team. Geleitet wird das Projekt von den drei Gründern, 
+                Erwin Kling, Marvin Schubert und Marc Drolshagen. Außerdem arbeiten wir eng mit NVIDIA zusammen.
+            </p>
+		</article>
+		<style>
+			.viveport {
+				margin-left: -7vw;
+				margin-top: 1vw;
+                width: 60vw;
+            }
+            
+			.vive {
+				margin-left: 30vw;
+				margin-top: 15vw;
+                width: 45vw;
+                rotate: -30deg;
+            }
+            
+			.Beschreibung{
+				perspective-origin: bottom;
+				position: absolute;
+				padding: 40vw 16vw 5vh 16vw;
+				color: white;
+				
+			}
+			
+			
+            
+			
+		</style>
+    </main>
+
+    <footer>
+        <!-- Aufzählung der Footer Links -->
+        <div class="footerHeadlineLinks">
+            <h1>Links</h1>
+        </div>
+        <div class="supportLink">
+            <a href="#">Support</a>
+        </div>
+        <div class="aboutUsLink">
+            <a href="#">Über Uns</a>
+        </div>
+        <div class="impressumLink">
+            <a href="#">Impressum</a>
+        </div>
+   
+        <!-- Aufzählung des Newsletters -->
+        <div class="newsLetterHeadline">
+            <h1>Newsletter</h1>
+        </div>
+            <div class="newsLetterMailInput">
+            <input id="emailInput" type="text" placeholder="E-Mail Adresse" />
+            <input id="submitButton" type="button" value="Jetzt Anmelden" />
+              
+        </div>
+
+        <!-- Aufzählung der Socialmedia Links-->
+        <div class="socialMediaHeadline">
+            <h1>Community</h1>
+        </div>
+        <div class="youtubeLink">
+            <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" class="Logo"/></a>
+        </div>
+        <div class="twitterLink">
+            <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" class="Logo"/></a>
+        </div>
+        <div class="instagramLink">
+            <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
+        </div>
+  </footer>	
+  <script src="showOnScroll.js"></script>
+</body>
+</html>

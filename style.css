@@ -75,13 +75,66 @@ input[type="button"]:hover {
 main h1 {
     font-size: 20pt;
     color: white;
+    margin-top: 30px;
     margin-bottom: 15px;
     font-weight: 800;
 }
 
-p {
-    font-size: 15pt;
+main h2 {
+    font-size: 18pt;
     color: white;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+main h3 {
+    font-size: 16pt;
+    color: white;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+main ul {
+    color: white;
+}
+
+
+main a {
+    color: white;
+    transition: 0.1;
+}
+
+main a:hover {
+    color: #ff8400;
+}
+
+@media (min-width: 755px){
+    p {
+        font-size: 15pt;
+        color: white;
+    }
+}
+
+
+@media (max-width: 754px){
+    p {
+        font-size: 12px;
+        color: white;
+    }
+
+    main h1 {
+        font-size: 15px;
+    }
+
+    main h2 {
+        font-size: 14px;
+    }
+
+    main h3 {
+        font-size: 13px;
+    }
 }
 
 h1 {

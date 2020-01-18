@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="DLC-Übersicht">   <!-- bitte Beschreibung anpassen-->
+    <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+        body {
+            display: grid;
+            width: 100%;
+            grid-template-rows: 75px calc(100vh - 275px) 200px;  /* Zeilenhöhe */
+			grid-template-columns: 100vw;
+            background-color: #161834;
+            grid-template-areas: 
+                "nav"
+                "main"
+                "footer";
+        }
+
+        main {
+            /* Code um ein einzelnes füllendes Headerbild hinzuzufügen: */
+            /* background: url(img/großes_Bild_Startseite.jpg) no-repeat center center;
+            background-size: cover; */
+            grid-area: main;
+        }
+
+        .boxer{
+			position: fixed;
+			margin-left: 8vw;
+			margin-top: -3vw;
+			width: 64vw;
+			transform: scale(0.8);
+			transform: rotate(-3deg);
+			cursor: pointer;
+        }
+        
+		.BallDLC{
+			position: relative;
+			margin-left: 34vw;
+			margin-top: -1vw;
+			width: 55vw;
+            transform: scale(0.8);
+			transform: rotate(3deg);
+            cursor: pointer;
+		}
+        
+        .dlc1title{
+				position: absolute;
+				font-weight: bold;
+				margin-left: 54vw;
+				margin-top: 5vw;
+				color: white;
+                font-size: 2vw;
+				width: 20vw;
+        }
+        
+		.dlc2title{
+			position: absolute;
+			font-weight: bold;
+			margin-top: -12vw;
+			margin-left: 68vw;
+			color: white;
+            font-size: 2vw;	
+        }
+            
+        .mainanimation {
+            transition: 1s;
+            transform: scale(0.9);
+        }
+
+        .dlcanimation {
+			transition: 1s;
+            transform: scale(0.9);
+		}
+			
+		.mainanimation:hover{
+			transform: scale(1);
+				
+		}
+
+		.dlcanimation:hover{
+			transform: scale(1);
+
+		}
+        
+        /*DestopView*/
+		@media (min-width: 755px){
+            main{
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: 7vw repeat(12, 1fr) 7vw; 
+                grid-template-rows: 75px;
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+				grid-template-areas: 
+                ". . boxer"
+				"balldlcpic . .";  
+            }
+        }
+
+        /* MOBILE VIEW */
+        @media (max-width: 754px){
+            body {
+                width: 100%;
+                grid-template-rows: 75px 300px 450px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+            }
+
+            main{
+                grid-area: main;
+                display: grid;
+                width: 100%;
+                grid-template-rows: repeat(2, 1fr);
+                grid-template-columns: 7vw 86vw 7vw; 
+                grid-column-gap: 0.7vw;
+                background-color: #161834;
+                /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
+                Rand Content Rand */
+            }
+        }
+
+       
+    </style>
+    <script src="navResponsive.js"></script>
+    <script src="startAnimation.js"></script>
+</head>
+
+<body onresize="resize()">
+    <div class="navWrapper">
+        <nav>
+            <ul>
+                <li class="logoHomeButton"><a href="index.html"><img src="img/Logo_Home_Button.png" alt="" class="logoImage"></a></li>
+                <li class="produkte menüpunkt"><a href="produkte.html">Produkte</a></li>
+                <li class="zubehör menüpunkt"><a href="#">Zubehör</a></li>
+                <li class="news menüpunkt"><a href="news.html">News</a></li>
+                <li class="sandwich" onclick="sandwichClick()"><img src="img/sandwich.svg" alt=""></li> <!-- nav ausklapp-button -->
+                <li class="background"><div></div></li> <!-- Hintergrund für die Navbar -->
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+<a href="box_dlc.html"<div class="mainanimation"><img src="img/punching.png" grid-area="boxer" class="boxer">
+				<article class="dlc1title" grid-area="Haupttitel">
+			Box-DLC
+		</article></div></a>
+		<a href="ball_dlc.html"<div class="dlcanimation"><img src="img/ballgame.png" grid-area="balldlcpic" class="BallDLC"/>
+			<article class="dlc2title" grid-area="DLC2titel">
+			Ballsport-DLC
+	</article></div></a>
+	
+    </main> 
+
+    <footer>
+        <!-- Aufzählung der Footer Links -->
+        <div class="footerHeadlineLinks">
+            <h1>Links</h1>
+        </div>
+        <div class="supportLink">
+            <a href="#">Support</a>
+        </div>
+        <div class="aboutUsLink">
+            <a href="#">Über Uns</a>
+        </div>
+        <div class="impressumLink">
+            <a href="#">Impressum</a>
+        </div>
+   
+        <!-- Aufzählung des Newsletters -->
+        <div class="newsLetterHeadline">
+            <h1>Newsletter</h1>
+        </div>
+            <div class="newsLetterMailInput">
+            <input id="emailInput" type="text" placeholder="E-Mail Adresse" />
+            <input id="submitButton" type="button" value="Jetzt Anmelden" />
+              
+        </div>
+
+        <!-- Aufzählung der Socialmedia Links-->
+        <div class="socialMediaHeadline">
+            <h1>Community</h1>
+        </div>
+        <div class="youtubeLink">
+            <a href="https://www.youtube.com/?gl=DE&hl=de"><img src="img\yt_icon_mono_dark.png" alt="Youtube Logo" class="Logo"/></a>
+        </div>
+        <div class="twitterLink">
+            <a href="https://twitter.com/"><img src="img\Twitter_Logo_WhiteOnImage.png" alt="Twitter Logo" class="Logo"/></a>
+        </div>
+        <div class="instagramLink">
+            <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
+        </div>
+  </footer>	
+
+</body>
+</html>
