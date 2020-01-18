@@ -127,6 +127,14 @@ main a:hover {
     main h1 {
         font-size: 15px;
     }
+
+    main h2 {
+        font-size: 14px;
+    }
+
+    main h3 {
+        font-size: 13px;
+    }
 }
 
 h1 {
