@@ -28,12 +28,24 @@
             justify-items: start;
             grid-template-areas: 
             ". . . . . . . . . . . ." 
-            ". . . . . . supportDocument . . . . ."
+            ". . . . . . . . . formContainer . ."
+            
+                
             
         }
 
-        
-        .supportDocument{
+        .formContainer{
+            grid-area: formContainer;
+            display: grid;
+            grid-template-columns: 7vw repeat(3, 1fr) 7vw;
+            grid-gap: 0.7vw;
+            grid-template-areas:
+                "Logo1 supportDocument Logo2"
+        }
+
+
+
+        .supportDocument {
             grid-area: supportDocument;
             border-radius: 70px;
             width: auto;
@@ -42,10 +54,9 @@
             border: 4px solid #FFAD0A;
             display: grid;
             grid-template-columns: 7vw repeat(8, 1fr) 7vw;
-            grid-template-rows: repeat(13, 1fr);
-            grid-column-gap: 0.7vw;
+            grid-gap: 0.7vw;
             justify-items: start;
-            grid-template-areas: 
+            grid-template-areas:
                 ". . . . . . . ."
                 ". . firstNameHeadline . . firstNameInputClass . ."
                 ". . lastNameHeadline . . lastNameInputClass . ."
@@ -61,13 +72,26 @@
                 ". . . . . . . ."
         }
 
+        .Logo1{
+            grid-area: Logo1;
+            margin: -400px;
+            margin-top: 400px;
+        }
+
+        .Logo2{
+            grid-area: Logo2;
+            margin: -140px;
+            margin-top: 10px;
+        }
+
+
         .firstNameHeadline {
             grid-area: firstNameHeadline;
             color: white;
             font-family: Montserrat;
         }
 
-        .lastNameHeadline{
+        .lastNameHeadline {
             grid-area: lastNameHeadline;
             color: white;
             font-family: Montserrat;
@@ -114,7 +138,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -126,7 +150,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -138,7 +162,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -150,7 +174,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -162,7 +186,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -174,7 +198,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -186,7 +210,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -198,7 +222,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: center;
             height: 30px;
@@ -210,7 +234,7 @@
             color: #4B4A4A;
             background-color: white;
             font-family: Montserrat;
-            border-radius: 16px;
+            border-radius: 10px;
             border: 1px solid #707070;
             text-align: start;
             height: auto;
@@ -245,6 +269,21 @@
 
         form input:valid{
             border-color: green;
+            border-width: 2px;
+            background-image: url(trueIcon.svg); 
+            background-position: right; 
+            background-repeat: no-repeat;
+            background-size: auto;
+            
+        }
+
+        form input:invalid{
+            border-width: 2px;
+            border-color: red;
+            background-image: url(falseicon.svg); 
+            background-position: right; 
+            background-repeat: no-repeat; 
+            background-size: auto; 
         }
 
 
@@ -268,40 +307,56 @@
         @media (max-width: 754px){
             body {
                 width: 100%;
-                grid-template-rows: 75px 2000px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
+                grid-template-rows: 75px 460px 400px;  /* Zeilenhöhe des Main und des Footers vergrößert */
             }
 
-            main{
+            .Logo1{
+            grid-area: Logo1;
+            visibility: hidden;
+        }
+
+        .Logo2{
+            grid-area: Logo2;
+            visibility: hidden;
+        }
+
+            main {
+                margin-top: 40px;
                 grid-area: main;
                 display: grid;
                 width: 100%;
                 grid-template-rows: repeat(15, 1fr);
-                grid-template-columns: 7vw 86vw 7vw; 
+                grid-template-columns: 7vw 86vw 7vw;
                 grid-column-gap: 0.7vw;
                 background-color: #161834;
                 /* Responsive Neu-Anordnung der Inhalte in 3 Spalten:
                 Rand Content Rand */
-                grid-template-areas: 
-                ". . ."
-                ". supportDocument ."
-                 
-
+                grid-template-areas: "formContainer"
             }
 
-            .supportBtnSubmitClass{
-            grid-area: supportBtnSubmitClass;
-            color: #4B4A4A;
-            font-size: 14px;
-            background-color: white;
-            font-family: Montserrat;
-            border-radius: 21px;
-            border: 1px solid #707070;
-            text-align: center;
-            padding-left: 4px;
-            padding-right: 4px;
-            width:  auto;
-            height: 40px;
+             .formContainer{
+            grid-area: formContainer;
+            display: grid;
+            grid-template-columns: 7vw repeat(3, 1fr) 7vw;
+            grid-gap: 0.7vw;
+            grid-template-areas:
+                ". supportDocument ."
         }
+
+            .supportBtnSubmitClass {
+                grid-area: supportBtnSubmitClass;
+                color: #4B4A4A;
+                font-size: 14px;
+                background-color: white;
+                font-family: Montserrat;
+                border-radius: 21px;
+                border: 1px solid #707070;
+                text-align: center;
+                padding-left: 4px;
+                padding-right: 4px;
+                width: auto;
+                height: 40px;
+            }
 
         }
        
@@ -326,31 +381,36 @@
 
     <main>
         <!-- füge hier den Hauptcontent der Website ein. Einen Textblock mitsamt Überschrift solltest du noch mit einem <article> tag umgeben
-        dies ist wichtig für Screenreader und Suchmaschinen
-        pattern="((strasse)|(str.))+\s\d"
-        -->
-        <form class="supportDocument">
-            <!--Aufzählung der Headlines-->
-            <label class="firstNameHeadline">Vorname:</label>
-            <label class="lastNameHeadline">Nachname:</label>
-            <label class="streetHeadline">Adresse:</label>
-            <label class="postCodeHeadline">Postleitzahl:</label>
-            <label class="cityHeadline">Stadt:</label>
-            <label class="mailHeadline">Email:</label>
-            <label class="confirmMailHeadline">Bestätige&nbsp;Email:</label>
-            <label class="systemHeadline">System:</label>
-            <!--Aufzählung der Inputs-->
-            <input id="firstNameInput" class="firstNameInputClass" type="text" required>
-            <input id="lastNameInput" class="lastNameInputClass" type="text" required>
-            <input id="streetInput" class="streetInputClass" type="text" pattern="\w*\W\s\d*\d" title="Strassenname + Hausnummer" required>
-            <input id="postCodeInput" class="postCodeInputClass" type="text" pattern="[\d]{5}" title="5 stellige Postleitzahl" required>
-            <input id="cityInput" class="cityInputClass" type="text" required>
-            <input id="mailInput" class="mailInputClass" required type="email" name="email">
-            <input id="confirmMailInput" class="confirmMailInputClass" type="text" required>
-            <input id="systemInput" class="systemInputClass" type="text" required>
-            <textarea id="descriptionInput" class="descriptionInputClass" rows="2" cols="20"></textarea>
-            <button id="supportSubmitBtn" class="supportBtnSubmitClass" type="submit">Senden</button>
-        </form>
+    dies ist wichtig für Screenreader und Suchmaschinen
+    pattern="((strasse)|(str.))+\s\d"
+    -->
+        <div class="formContainer">
+            <form class="supportDocument">
+                <!--Aufzählung der Headlines-->
+                <label class="firstNameHeadline">Vorname:</label>
+                <label class="lastNameHeadline">Nachname:</label>
+                <label class="streetHeadline">Adresse:</label>
+                <label class="postCodeHeadline">Postleitzahl:</label>
+                <label class="cityHeadline">Stadt:</label>
+                <label class="mailHeadline">Email:</label>
+                <label class="confirmMailHeadline">Bestätige&nbsp;Email:</label>
+                <label class="systemHeadline">System:</label>
+                <!--Aufzählung der Inputs-->
+                <input id="firstNameInput" class="firstNameInputClass" type="text" required title="Vorname">
+                <input id="lastNameInput" class="lastNameInputClass" type="text" required title="Nachname">
+                <input id="streetInput" class="streetInputClass" type="text" pattern="(\w*\W\s\d*\d)|(\w+\s+\w+\s+\d*\d)|(\w*\w\s\d*\d)" title="Strassenname + Hausnummer" required>
+                <input id="postCodeInput" class="postCodeInputClass" type="text" pattern="[\d]{5}" title="5 stellige Postleitzahl" required>
+                <input id="cityInput" class="cityInputClass" type="text" required title="Stadt">
+                <input id="mailInput" class="mailInputClass" required type="email" name="email" title="Email">
+                <input id="confirmMailInput" class="confirmMailInputClass" type="text" required title="Email">
+                <input id="systemInput" class="systemInputClass" type="text" required title="Das System welches sie benutzen">
+                <textarea id="descriptionInput" class="descriptionInputClass" rows="2" cols="20"></textarea>
+                <button id="supportSubmitBtn" class="supportBtnSubmitClass" type="submit">Senden</button>
+            </form>
+            <img src="img\Pfad 1.png" alt="Dreieck" class="Logo1" />
+            <img src="img\Pfad 7.png" alt="Dreieck" class="Logo2" />
+        </div>
+        
     </main>
 
     <footer>
