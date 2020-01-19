@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Box-DLC">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
         body {
@@ -61,10 +61,42 @@
             }
 
         }
+
+        .vrpunch{
+                margin-left: 40vw;
+				margin-top: 18vw;
+				width: 40vw;
+        }
+        
+		.punching{
+		    margin-left: -7vw;
+			margin-top: 5vw;
+            width: 50vw;
+        }
+
+		.Beschreibung{
+			perspective-origin: bottom;
+			position: absolute;
+			padding: 40vw 16vw 5vh 16vw;
+			color: white;
+        }
+        
+		.steamlogo{
+			width: 8vw;
+        }
+        
+		.steambutton{
+			background-color: #0FFF71;
+			width: 20vw;
+			height: auto;
+			margin: 20px;
+			font-size: 20pt;			
+			border-radius: 10px;
+			margin: 5%;
+		}
        
     </style>
-    <script src="navResponsive.js"></script>
-    <script src="startAnimation.js"></script>
+    <script src="js/navResponsive.js"></script>
 </head>
 
 <body onresize="resize()">
@@ -91,40 +123,6 @@
 				<a href="www.steam.com/"><button class="steambutton" ti> Bei <img class="steamlogo" src="img/steam-header_logo.png"> erhältlich </button></p></a>
 				
 		</article>
-		<style>
-			.vrpunch{
-                margin-left: 40vw;
-				margin-top: 18vw;
-				width: 40vw;
-			}
-			.punching{
-				margin-left: -7vw;
-				margin-top: 5vw;
-                width: 50vw;
-			}
-			.Beschreibung{
-				perspective-origin: bottom;
-				position: absolute;
-				padding: 40vw 16vw 5vh 16vw;
-				color: white;
-				
-			}
-			.steamlogo{
-				width: 8vw;
-				
-				
-			}
-			.steambutton{
-				background-color: #0FFF71;
-				width: 20vw;
-				height: auto;
-				margin: 20px;
-				font-size: 20pt;			
-				border-radius: 10px;
-				margin: 5%;
-			}
-			
-		</style>
     </main>
 
 

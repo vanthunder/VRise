@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Entdecke den neuen Multiplayer Modus von VRise">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - News: Neuer Multiplayer Modus</title> <!-- bitte Titel anpassen-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
         body {
@@ -58,9 +58,30 @@
             }
 
         }
+
+        .football {
+			margin-left: -7vw;
+			margin-top: 1vw;
+            width: 55vw;
+        }
+            
+		.team {
+			margin-left: 30vw;
+			margin-top: 10vw;
+            width: 45vw;
+            rotate: -13deg; 
+        }
+            
+		.Beschreibung{
+			perspective-origin: bottom;
+			position: absolute;
+			padding: 40vw 16vw 5vh 16vw;
+			color: white;
+				
+		}
        
     </style>
-    <script src="navResponsive.js"></script>
+    <script src="js/navResponsive.js"></script>
 </head>
 
 <body onresize="resize()">
@@ -87,30 +108,6 @@
 				
 				
 		</article>
-		<style>
-			.football {
-				margin-left: -7vw;
-				margin-top: 1vw;
-                width: 55vw;
-            }
-            
-			.team {
-				margin-left: 30vw;
-				margin-top: 10vw;
-                width: 45vw;
-               rotate: -13deg; 
-            }
-            
-			.Beschreibung{
-				perspective-origin: bottom;
-				position: absolute;
-				padding: 40vw 16vw 5vh 16vw;
-				color: white;
-				
-			}
-			
-			
-		</style>
     </main>
 
     <footer>
@@ -152,6 +149,6 @@
             <a href="https://www.instagram.com/"><img src="img\glyph-logo_May2016_.png" alt="Instagram Logo" class="Logo" /></a>
         </div>
   </footer>	
-  <script src="showOnScroll.js"></script>
+  <script src="js/showOnScroll.js"></script>
 </body>
 </html>
