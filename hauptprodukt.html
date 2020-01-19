@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="Unser Produkt">  <!-- bitte Beschreibung anpassen-->
     <title>VRise - Titel dieser Seite</title> <!-- bitte Titel anpassen-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <style>
 
         body {
@@ -63,10 +63,42 @@
             }
 
         }
+
+        .Hauptspiel{
+				margin-left: -7vw;
+				margin-top: 1vw;
+				width: 60vw;
+		}
+        
+        .Fahrrad{
+			margin-left: 30vw;
+			margin-top: 15vw;
+			width: 45vw;
+        }
+        
+		.Beschreibung{
+			perspective-origin: bottom;
+			position: absolute;
+			padding: 40vw 16vw 5vh 16vw;
+			color: white;
+        }
+        
+		.steamlogo{
+			width: 8vw;
+        }
+        
+		.steambutton{
+			background-color: #0FFF71;
+			width: 20vw;
+			height: auto;
+			margin: 20px;
+			font-size: 20pt;			
+			border-radius: 10px;
+			margin: 5%;
+		}
        
     </style>
-    <script src="navResponsive.js"></script>
-    <script src="startAnimation.js"></script>
+    <script src="js/navResponsive.js"></script>
 </head>
 
 <body onresize="resize()">
@@ -94,40 +126,6 @@
 				<a href="www.steam.com/"><button class="steambutton" ti> Bei <img class="steamlogo" src="img/steam-header_logo.png"> erhältlich </button></a>
 			</p>
 		</article>
-		<style>
-			.Hauptspiel{
-				margin-left: -7vw;
-				margin-top: 1vw;
-				width: 60vw;
-			}
-			.Fahrrad{
-				margin-left: 30vw;
-				margin-top: 15vw;
-				width: 45vw;
-			}
-			.Beschreibung{
-				perspective-origin: bottom;
-				position: absolute;
-				padding: 40vw 16vw 5vh 16vw;
-				color: white;
-				
-			}
-			.steamlogo{
-				width: 8vw;
-				
-				
-			}
-			.steambutton{
-				background-color: #0FFF71;
-				width: 20vw;
-				height: auto;
-				margin: 20px;
-				font-size: 20pt;			
-				border-radius: 10px;
-				margin: 5%;
-			}
-			
-		</style>
     </main>
 
     <footer>
