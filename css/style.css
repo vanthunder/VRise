@@ -115,6 +115,9 @@ main a:hover {
         font-size: 15pt;
         color: white;
     }
+    button {
+        font-size: 13pt;
+    }
 }
 
 
@@ -134,6 +137,10 @@ main a:hover {
 
     main h3 {
         font-size: 13px;
+    }
+
+    button {
+        font-size: 4vw;
     }
 }
 
